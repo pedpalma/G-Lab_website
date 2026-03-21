@@ -44,3 +44,9 @@ button { font-family: inherit; }
   --topbar-h: 38px;
   --header-h: 68px;
 }
+
+/* Ancora não fica escondida sob o header fixo */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--topbar-h) + var(--header-h) + 8px);
+}
