@@ -10,7 +10,7 @@
                         FONTES GOOGLE
                 - Sora  : títulos, logo e UI
                 - Barlow: corpo de texto e subtítulos
-            ══════════════════════════════════════════════ -->
+        ══════════════════════════════════════════════ -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet"/>
@@ -24,9 +24,10 @@
         <link rel="stylesheet" href="assets/css/header.css" />
 
     </head>
+    <body>
     <!-- ══════════════════════════════════════════════════════════════
                                 TOPBAR
-    ══════════════════════════════════════════════════════════════════ -->
+    ═══════════════════════════════════════════════════════════════ -->
     <div class="topbar">
         <div class="container topbar__inner">
             <span class="topbar__item">
@@ -39,51 +40,83 @@
     </div>
     <!-- ══════════════════════════════════════════════════════════════
                                 HEADER
-    ══════════════════════════════════════════════════════════════════ -->
-    <header class="header" id="header">
-        <div class="container header__inner">
-            <!-- Logo -->
-            <a href="#" class="header__logo" aria-label="G-Lab Telecom">
-                <img src="assets/icons/logo-white-big.png" alt="G-Lab Telecom" class="header__logo-img" />
-            </a>
-            <!-- Nav -->
-            <nav class="nav" id="desktopNav" aria-label="Menu principal">
-                <ul class="nav__list">
-                <li><a href="#beneficios" class="nav__link">Benefícios</a></li>
-                <li><a href="#planos"     class="nav__link">Planos</a></li>
-                <li><a href="#sobre"      class="nav__link">Sobre</a></li>
-                <li><a href="#contato"    class="nav__link">Contato</a></li>
-                <li><a href="#faq"        class="nav__link">FAQ</a></li>
-                </ul>
-            </nav>
+    ═══════════════════════════════════════════════════════════════ -->
+        <header class="header" id="header">
+            <div class="container header__inner">
+                <!-- Logo -->
+                <a href="#" class="header__logo" aria-label="G-Lab Telecom">
+                    <img src="assets/icons/logo-white-big.png" alt="G-Lab Telecom" class="header__logo-img" />
+                </a>
+                <!-- Nav -->
+                <nav class="nav" id="desktopNav" aria-label="Menu principal">
+                    <ul class="nav__list">
+                    <li><a href="#beneficios" class="nav__link">Benefícios</a></li>
+                    <li><a href="#planos"     class="nav__link">Planos</a></li>
+                    <li><a href="#sobre"      class="nav__link">Sobre</a></li>
+                    <li><a href="#contato"    class="nav__link">Contato</a></li>
+                    <li><a href="#faq"        class="nav__link">FAQ</a></li>
+                    </ul>
+                </nav>
 
-            <!-- Botões de ação -->
-            <div class="header__actions">
-                <a href="https://api.whatsapp.com/send?phone=5511948830455"
-                    target="_blank" rel="noopener"
-                    class="btn btn--outline-nav btn--sm">
-                <i class="ph ph-whatsapp-logo"></i> WhatsApp
-                </a>
-                <a href="https://ixc.g-labtelecom.com.br/central_assinante_web/login"
-                    target="_blank" rel="noopener"
-                    class="btn btn--outline-nav btn--sm">
-                <i class="ph ph-user-circle"></i> Central do Assinante
-                </a>
-                <a href="https://vantagens.g-labtelecom.com.br/"
-                    target="_blank" rel="noopener"
-                    class="btn btn--primary btn--sm">
-                Clube de Vantagens
-                </a>
+                <!-- Botões de ação -->
+                <div class="header__actions">
+                    <a href="https://api.whatsapp.com/send?phone=5511948830455"
+                        target="_blank" rel="noopener"
+                        class="btn btn--outline-nav btn--sm">
+                    <i class="ph ph-whatsapp-logo"></i> WhatsApp
+                    </a>
+                    <a href="https://ixc.g-labtelecom.com.br/central_assinante_web/login"
+                        target="_blank" rel="noopener"
+                        class="btn btn--outline-nav btn--sm">
+                    <i class="ph ph-user-circle"></i> Central do Assinante
+                    </a>
+                    <a href="https://vantagens.g-labtelecom.com.br/"
+                        target="_blank" rel="noopener"
+                        class="btn btn--primary btn--sm">
+                    Clube de Vantagens
+                    </a>
+                </div>
+
+                <!-- Botão mobile (responsive.css) -->
+                <!-- Lógica: assets/js/mobileMenu.js -->
+                <button class="hamburger" id="hamburger"
+                        aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
+
             </div>
-
-            <!-- Botão mobile (responsive.css) -->
-            <!-- Lógica: assets/js/mobileMenu.js -->
-            <button class="hamburger" id="hamburger"
-                    aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-                <span class="hamburger__line"></span>
-                <span class="hamburger__line"></span>
-                <span class="hamburger__line"></span>
-            </button>
-
+        </header>
+        <!-- ══════════════════════════════════════════════════════════════
+                                MENU MOBILE
+        ═══════════════════════════════════════════════════════════════ -->
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <nav aria-label="Menu mobile">
+                <ul class="mobile-menu__list">
+                    <li><a href="#beneficios" class="mobile-menu__link">Benefícios</a></li>
+                    <li><a href="#planos"     class="mobile-menu__link">Planos</a></li>
+                    <li><a href="#sobre"      class="mobile-menu__link">Sobre</a></li>
+                    <li><a href="#contato"    class="mobile-menu__link">Contato</a></li>
+                    <li><a href="#faq"        class="mobile-menu__link">FAQ</a></li>
+                </ul>
+                <div class="mobile-menu__actions">
+                    <a href="https://api.whatsapp.com/send?phone=5511948830455"
+                        target="_blank" rel="noopener"
+                        class="btn btn--outline-nav btn--full">
+                    <i class="ph ph-whatsapp-logo"></i> WhatsApp
+                    </a>
+                    <a href="https://ixc.g-labtelecom.com.br/central_assinante_web/login"
+                        target="_blank" rel="noopener"
+                        class="btn btn--outline-nav btn--full">
+                    <i class="ph ph-user-circle"></i> Central do Assinante
+                    </a>
+                    <a href="https://vantagens.g-labtelecom.com.br/"
+                        target="_blank" rel="noopener"
+                        class="btn btn--primary btn--full">
+                    Clube de Vantagens
+                    </a>
+                </div>
+            </nav>
         </div>
-    </header>
+    </body>
