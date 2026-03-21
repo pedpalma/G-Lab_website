@@ -8,14 +8,14 @@ button { font-family: inherit; }
 
 
 :root {
-  /* Paleta azul-escuro */
+  /* azul-escuro */
   --navy:       #04122b;   /* topbar, footer */
   --navy-mid:   #0a1f4a;   /* planos, hero */
   --navy-light: #0d2760;   /* cards, sobre */
   --blue:       #1045a8;   /* hover de botões */
   --blue-mid:   #1558d6;   /* ação principal */
 
-  /* Accent ciano */
+  /* ciano */
   --cyan:       #00c6ff;
   --cyan-dim:   rgba(0,198,255,.12);
   --glow:       rgba(0,198,255,.25);
@@ -36,17 +36,28 @@ button { font-family: inherit; }
   --shadow-lg:   0 20px 60px rgba(4,18,43,.30);
   --shadow-glow: 0 0 40px    rgba(0,198,255,.18);
 
-  /* Transição padrão */
+  /* Transição */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --dur:  0.25s;
 
-  /* Alturas fixas — usadas no menu mobile e scroll-padding */
+  /* Alturas fixas */
   --topbar-h: 38px;
   --header-h: 68px;
 }
 
-/* Ancora não fica escondida sob o header fixo */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--topbar-h) + var(--header-h) + 8px);
 }
+
+body {
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--dark-text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+  
+  
+  
