@@ -1,0 +1,46 @@
+/* universal */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+img    { max-width: 100%; display: block; }
+a      { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font-family: inherit; }
+
+
+:root {
+  /* Paleta azul-escuro */
+  --navy:       #04122b;   /* topbar, footer */
+  --navy-mid:   #0a1f4a;   /* planos, hero */
+  --navy-light: #0d2760;   /* cards, sobre */
+  --blue:       #1045a8;   /* hover de botões */
+  --blue-mid:   #1558d6;   /* ação principal */
+
+  /* Accent ciano */
+  --cyan:       #00c6ff;
+  --cyan-dim:   rgba(0,198,255,.12);
+  --glow:       rgba(0,198,255,.25);
+
+  /* Neutros */
+  --white:      #ffffff;
+  --off-white:  #f4f7fe;
+  --light-gray: #e8edf8;
+  --mid-gray:   #8a97b8;
+  --dark-text:  #0f1b35;
+
+  /* Feedback */
+  --success:    #10d97e;
+
+  /* Sombras */
+  --shadow-sm:   0 2px 8px   rgba(4,18,43,.15);
+  --shadow-md:   0 8px 32px  rgba(4,18,43,.22);
+  --shadow-lg:   0 20px 60px rgba(4,18,43,.30);
+  --shadow-glow: 0 0 40px    rgba(0,198,255,.18);
+
+  /* Transição padrão */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur:  0.25s;
+
+  /* Alturas fixas — usadas no menu mobile e scroll-padding */
+  --topbar-h: 38px;
+  --header-h: 68px;
+}
