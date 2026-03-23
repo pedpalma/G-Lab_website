@@ -4,7 +4,7 @@ import { initHeaderScroll  } from './headerScroll.js';
 import { initMobileMenu    } from './mobileMenu.js';
 // import { initScrollSpy     } from './scrollSpy.js';
 // import { initSmoothScroll  } from './smoothScroll.js';
-// import { initScrollReveal  } from './scrollReveal.js';
+import { initScrollReveal  } from './scrollReveal.js';
 import { initTabs          } from './tabs.js';
 import { initStreamTabs    } from './streamTabs.js';
 // import { initFaq           } from './faq.js';
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // initSmoothScroll();
 
   /* 5. Scroll Reveal — fade-in dos elementos .reveal */
-  // initScrollReveal();
+  initScrollReveal();
 
   /* 6. Tabs de planos — Internet / Streaming */
   initTabs();
