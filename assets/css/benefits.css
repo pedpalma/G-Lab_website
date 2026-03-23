@@ -1,0 +1,95 @@
+/* ════════════════════════════════════════════════════════════════
+                            Benefits
+════════════════════════════════════════════════════════════════ */
+
+.diferenciais {
+  padding:    clamp(4rem, 8vw, 7rem) 0;
+  background: var(--off-white);
+}
+
+/* Layout 2 colunas: cards | imagem */
+.diferenciais__layout {
+  display:               grid;
+  grid-template-columns: 1fr 320px;
+  gap:                   3rem;
+  align-items:           center;
+}
+
+/* Grade interna 2×3 */
+.diferenciais__grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   1.1rem;
+}
+
+/* Card de diferencial */
+.dif-card {
+  display:     flex;
+  gap:         1rem;
+  align-items: flex-start;
+  background:  var(--white);
+  border-radius: 12px;
+  padding:     1.3rem 1.1rem;
+  border:      1px solid var(--light-gray);
+  transition:
+    transform    var(--dur) var(--ease),
+    box-shadow   var(--dur) var(--ease),
+    border-color var(--dur);
+}
+.dif-card:hover {
+  transform:    translateY(-5px);
+  box-shadow:   var(--shadow-md);
+  border-color: var(--cyan);
+}
+
+.dif-card__icon {
+  flex-shrink:     0;
+  width:           42px;
+  height:          42px;
+  background:      linear-gradient(135deg, var(--navy), var(--blue-mid));
+  border-radius:   10px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       1.3rem;
+  color:           var(--cyan);
+}
+
+.dif-card__text h3 { font-size: 0.94rem; color: var(--navy); margin-bottom: 0.28rem; }
+.dif-card__text p  { font-size: 0.82rem; color: #5a6a8a; line-height: 1.65; }
+
+/* Coluna de imagem */
+.diferenciais__visual { position: relative; }
+
+.diferenciais__img-wrap {
+  border-radius: 16px;
+  overflow:      hidden;
+  box-shadow:    var(--shadow-lg);
+}
+
+.diferenciais__img {
+  width:           100%;
+  height:          375px;
+  object-fit:      cover;
+  object-position: center;
+  display:         block;
+}
+
+/* Badge flutuante sobre a imagem */
+.diferenciais__badge {
+  position:        absolute;
+  bottom:          1.2rem;
+  left:            1.2rem;
+  background:      rgba(4,18,43,.85);
+  backdrop-filter: blur(8px);
+  border:          1px solid rgba(0,198,255,.35);
+  color:           var(--cyan);
+  font-family:     'Sora', sans-serif;
+  font-size:       0.76rem;
+  font-weight:     600;
+  padding:         0.42rem 0.85rem;
+  border-radius:   100px;
+  display:         flex;
+  align-items:     center;
+  gap:             0.4rem;
+}
