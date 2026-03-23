@@ -1,0 +1,90 @@
+/* ════════════════════════════════════════════════════════════════
+                            Botões
+════════════════════════════════════════════════════════════════ */
+
+
+/* Base do botão */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border-radius: 6px;
+  padding: 0.68rem 1.4rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    background    var(--dur) var(--ease),
+    border-color  var(--dur) var(--ease),
+    color         var(--dur) var(--ease),
+    transform     var(--dur) var(--ease),
+    box-shadow    var(--dur) var(--ease);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Modificadores de tamanho */
+.btn--lg   { padding: 0.88rem 2rem;   font-size: 0.96rem; }
+.btn--sm   { padding: 0.46rem 0.95rem; font-size: 0.78rem; }
+.btn--full { width: 100%; }
+
+/* azul sólido */
+.btn--primary {
+  background:   var(--blue-mid);
+  color:        var(--white);
+  border-color: var(--blue-mid);
+}
+.btn--primary:hover {
+  background:   var(--blue);
+  border-color: var(--blue);
+  transform:    translateY(-2px);
+  box-shadow:   0 6px 20px rgba(21,88,214,.38);
+}
+
+/* fantasma */
+.btn--ghost {
+  background:   transparent;
+  color:        var(--white);
+  border-color: rgba(255,255,255,.45);
+}
+.btn--ghost:hover {
+  border-color: var(--white);
+  background:   rgba(255,255,255,.08);
+}
+
+/* outline nav (botões secundários no header) */
+.btn--outline-nav {
+  background:   transparent;
+  color:        var(--white);
+  border-color: rgba(255,255,255,.3);
+}
+.btn--outline-nav:hover {
+  border-color: var(--cyan);
+  color:        var(--cyan);
+}
+
+/* outline light (cards de plano em fundo escuro) */
+.btn--outline-light {
+  background:   transparent;
+  color:        var(--white);
+  border-color: rgba(255,255,255,.35);
+}
+.btn--outline-light:hover {
+  background:   rgba(255,255,255,.1);
+  border-color: var(--white);
+}
+
+/* branco sólido (sobre fundos azuis) */
+.btn--white {
+  background:   var(--white);
+  color:        var(--navy);
+  border-color: var(--white);
+}
+.btn--white:hover {
+  background: var(--off-white);
+  transform:  translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,255,255,.25);
+}
