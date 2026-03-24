@@ -56,8 +56,8 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   gap:         3rem;
-  padding-top:    clamp(4rem, 8vw, 7rem);
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-top:    clamp(9rem, 8vw, 7rem);
+  padding-bottom: clamp(14rem, 5vw, 4rem);
 }
 
 /* Badge/pílula de destaque */
