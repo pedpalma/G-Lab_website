@@ -1,0 +1,70 @@
+/* ════════════════════════════════════════════════════════════════
+   use-cases.css
+   Conteúdo: seção de casos de uso com 2 cards foto + texto.
+   Classes  : .use-cases · .use-cases__grid · .use-case-card
+              .use-case-card__img-wrap · .use-case-card__img
+              .use-case-card__body · .use-case-card__icon
+   Imagens  : content-couple-using-laptop.jpg · content-teen-smiling.jpg
+════════════════════════════════════════════════════════════════ */
+
+.use-cases {
+  padding:    clamp(4rem, 8vw, 7rem) 0;
+  background: var(--white);
+}
+
+.use-cases__grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   1.5rem;
+}
+
+/* Card de caso de uso */
+.use-case-card {
+  border-radius: 16px;
+  overflow:      hidden;
+  border:        1px solid var(--light-gray);
+  background:    var(--white);
+  transition:    transform var(--dur) var(--ease), box-shadow var(--dur);
+}
+.use-case-card:hover {
+  transform:  translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Wrapper da imagem com aspect ratio 16:9 */
+.use-case-card__img-wrap {
+  aspect-ratio: 16 / 9;
+  overflow:     hidden;
+}
+.use-case-card__img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.use-case-card:hover .use-case-card__img { transform: scale(1.05); }
+
+/* Área de texto abaixo da imagem */
+.use-case-card__body {
+  padding:        1.5rem;
+  display:        flex;
+  flex-direction: column;
+  gap:            0.45rem;
+}
+
+/* Ícone do card */
+.use-case-card__icon {
+  width:           40px;
+  height:          40px;
+  background:      var(--navy-mid);
+  border-radius:   10px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       1.25rem;
+  color:           var(--cyan);
+  margin-bottom:   0.25rem;
+}
+
+.use-case-card__body h3 { color: var(--navy); }
+.use-case-card__body p  { font-size: 0.86rem; color: #5a6a8a; line-height: 1.7; }
