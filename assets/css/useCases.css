@@ -1,10 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   use-cases.css
-   Conteúdo: seção de casos de uso com 2 cards foto + texto.
-   Classes  : .use-cases · .use-cases__grid · .use-case-card
-              .use-case-card__img-wrap · .use-case-card__img
-              .use-case-card__body · .use-case-card__icon
-   Imagens  : content-couple-using-laptop.jpg · content-teen-smiling.jpg
+                          USE CASES
 ════════════════════════════════════════════════════════════════ */
 
 .use-cases {
@@ -31,7 +26,7 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Wrapper da imagem com aspect ratio 16:9 */
+/* Wrapper da imagem */
 .use-case-card__img-wrap {
   aspect-ratio: 16 / 9;
   overflow:     hidden;

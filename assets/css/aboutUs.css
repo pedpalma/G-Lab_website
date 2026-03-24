@@ -1,0 +1,55 @@
+/* ════════════════════════════════════════════════════════════════
+                            ABOUT US
+════════════════════════════════════════════════════════════════ */
+
+.sobre {
+  padding:    clamp(4rem, 8vw, 7rem) 0;
+  background: var(--off-white);
+}
+
+/* Layout 2 colunas: texto | grid de atributos */
+.sobre__inner {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   4rem;
+  align-items:           center;
+}
+
+.sobre__text .section-title { margin-bottom: 1.2rem; }
+
+.sobre__text p {
+  font-family: 'Barlow', sans-serif;
+  font-size:   0.97rem;
+  color:       #5a6a8a;
+  margin-bottom: 0.9rem;
+}
+
+/* Tagline final da seção */
+.sobre__tagline {
+  color:       var(--navy) !important;
+  font-family: 'Sora', sans-serif !important;
+  margin-bottom: 1.6rem !important;
+}
+
+/* Grid 2×2 de atributos */
+.sobre__stats-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   1rem;
+}
+
+/* Box de atributo individual */
+.sobre__stat-box {
+  background:     linear-gradient(135deg, var(--navy), var(--navy-light));
+  border-radius:  14px;
+  padding:        1.6rem 1.4rem;
+  display:        flex;
+  flex-direction: column;
+  gap:            0.35rem;
+  transition:     transform var(--dur) var(--ease);
+}
+.sobre__stat-box:hover { transform: translateY(-4px); }
+
+.sobre__stat-box i      { font-size: 1.65rem; color: var(--cyan); }
+.sobre__stat-box strong { font-size: 1rem; font-weight: 700; color: var(--white); }
+.sobre__stat-box span   { font-size: 0.76rem; color: var(--mid-gray); font-family: 'Barlow', sans-serif; }
