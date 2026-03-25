@@ -1,0 +1,16 @@
+/* ════════════════════════════════════════════════════════════════
+                            REVEAL
+════════════════════════════════════════════════════════════════ */
+
+.reveal {
+  opacity:    0;
+  transform:  translateY(28px);
+  transition:
+    opacity   0.65s var(--ease),
+    transform 0.65s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity:   1;
+  transform: translateY(0);
+}
