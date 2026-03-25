@@ -1,0 +1,80 @@
+/* ════════════════════════════════════════════════════════════════
+                            FAQ
+════════════════════════════════════════════════════════════════ */
+
+.faq {
+  padding:    clamp(4rem, 8vw, 7rem) 0;
+  background: var(--white);
+}
+
+.faq__list {
+  max-width:      780px;
+  margin:         0 auto;
+  display:        flex;
+  flex-direction: column;
+  gap:            0.7rem;
+}
+
+/* Item do accordion */
+.faq__item {
+  background:    var(--off-white);
+  border:        1px solid var(--light-gray);
+  border-radius: 10px;
+  overflow:      hidden;
+  transition:    box-shadow var(--dur);
+}
+.faq__item.is-open {
+  box-shadow:   var(--shadow-md);
+  border-color: var(--blue-mid);
+}
+
+/* Botão de pergunta */
+.faq__question {
+  width:           100%;
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             1rem;
+  padding:         1.2rem 1.4rem;
+  background:      none;
+  border:          none;
+  cursor:          pointer;
+  text-align:      left;
+  font-family:     'Sora', sans-serif;
+  font-size:       0.92rem;
+  font-weight:     600;
+  color:           var(--navy);
+  transition:      color var(--dur);
+}
+
+/* Ícone caret — rotaciona quando aberto */
+.faq__icon {
+  font-size:  1rem;
+  color:      var(--blue-mid);
+  flex-shrink: 0;
+  transition: transform 0.32s var(--ease);
+}
+.faq__item.is-open .faq__question { color: var(--blue-mid); }
+.faq__item.is-open .faq__icon     { transform: rotate(180deg); }
+
+/* Resposta — animação via max-height */
+.faq__answer {
+  max-height: 0;
+  overflow:   hidden;
+  transition: max-height 0.4s var(--ease), padding 0.3s;
+  padding:    0 1.4rem;
+}
+.faq__item.is-open .faq__answer {
+  max-height: 400px;
+  padding:    0 1.4rem 1.3rem;
+}
+
+.faq__answer p, .faq__answer ol {
+  font-family:   'Barlow', sans-serif;
+  font-size:     0.9rem;
+  color:         #5a6a8a;
+  line-height:   1.75;
+  margin-bottom: 0.7rem;
+}
+.faq__answer ol { padding-left: 1.3rem; }
+.faq__answer a  { color: var(--blue-mid); text-decoration: underline; }
