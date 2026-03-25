@@ -37,6 +37,12 @@
   grid-template-columns: 1fr 1fr;
   gap:                   1rem;
 }
+@media (max-width: 768px) {
+  .sobre__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
 
 /* Box de atributo individual */
 .sobre__stat-box {
