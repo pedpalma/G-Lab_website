@@ -31,46 +31,10 @@ The website is deployed on Vercel, which provides a seamless deployment process 
 
 # Structure of the Repository
 The repository is organized as follows:
-  /
-  ├── index.html
-  ├── logo-white-big.png
-  ├── background-portrait.jpg
-  ├── background-blue-woman.jpg
-  ├── content-gamer.jpg
-  ├── content-couple-using-laptop.jpg
-  ├── content-teen-smiling.jpg
-  │
-  └── assets/
-      ├── css/
-      │   ├── base.css
-      │   ├── buttons.css
-      │   ├── topbar.css
-      │   ├── header.css
-      │   ├── mobile-menu.css
-      │   ├── hero.css
-      │   ├── diferenciais.css
-      │   ├── banner-cta.css
-      │   ├── planos.css
-      │   ├── use-cases.css
-      │   ├── sobre.css
-      │   ├── contato.css
-      │   ├── faq.css
-      │   ├── footer.css
-      │   ├── whatsapp.css
-      │   ├── reveal.css
-      │   └── responsive.css
-      │
-      └── js/
-          ├── main.js
-          ├── headerScroll.js
-          ├── mobileMenu.js
-          ├── scrollSpy.js
-          ├── smoothScroll.js
-          ├── scrollReveal.js
-          ├── tabs.js
-          ├── streamTabs.js
-          ├── faq.js
-          └── statsCounter.js
+- `index.html`: The main HTML file that contains the structure of the website.
+- `assets/`: A directory that contains all the images and other media used on the website.
+- `styles/`: A directory that contains the CSS files for styling the website.
+- `scripts/`: A directory that contains the JavaScript files for adding interactivity to the website.
 
 # Credits
 The G-Lab website was designed and developed by the G-Lab Telecom team. Mainly developed by [@pedpalma].
