@@ -47,7 +47,7 @@
   transition:      color var(--dur);
 }
 
-/* Ícone caret — rotaciona quando aberto */
+/* Ícone caret rotaciona quando aberto */
 .faq__icon {
   font-size:  1rem;
   color:      var(--blue-mid);
@@ -57,7 +57,7 @@
 .faq__item.is-open .faq__question { color: var(--blue-mid); }
 .faq__item.is-open .faq__icon     { transform: rotate(180deg); }
 
-/* Resposta — animação via max-height */
+/* Resposta animação via max-height */
 .faq__answer {
   max-height: 0;
   overflow:   hidden;

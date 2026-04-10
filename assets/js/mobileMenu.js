@@ -5,7 +5,7 @@ export function initMobileMenu() {
 
   /**
    * Abre ou fecha o menu mobile.
-   * @param {boolean} [forceClose=false] — se true, sempre fecha independente do estado atual.
+   * @param {boolean} [forceClose=false] se true, sempre fecha independente do estado atual.
    */
   function setMenuOpen(forceClose = false) {
     const willOpen = forceClose ? false : !hamburger.classList.contains('is-open');
