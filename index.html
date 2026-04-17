@@ -308,16 +308,18 @@
                     </div>
                     <div class="planos__tabs" role="tablist">
                         <button class="tab-btn tab-btn--active" data-tab="internet" role="tab" aria-selected="true">
-                            <i class="ph ph-wifi-high"></i> Só Internet
+                            <i class="ph ph-wifi-high"></i> Internet
                         </button>
                         <button class="tab-btn" data-tab="streaming" role="tab" aria-selected="false">
-                            <i class="ph ph-television-simple"></i> + Streaming
+                            <i class="ph ph-wifi-high"></i> + Streaming
                         </button>
                     </div>
                     <!-- ABA: SÓ INTERNET -->
                     <div class="planos__content" id="tab-internet" role="tabpanel">
                         <div class="planos__grid">
                             <div class="plano-card reveal">
+                                <div class="plano-card__internet-logo"><img src="./assets/icons/logo-blue-big.png" alt="Max"/></div>
+                                <div class="plano-card__name">G-Lab 300Mbps</div>
                                 <div class="plano-card__speed">300 <span>Mbps</span></div>
                                 <div class="plano-card__upload">↑ até 150 Mbps</div>
                                 <div class="plano-card__price"><small>R$</small>79<sup>,90</sup>/mês</div>
@@ -330,6 +332,8 @@
                                 <p class="plano-card__note">*Valores válidos até o vencimento</p>
                             </div>
                             <div class="plano-card reveal">
+                                <div class="plano-card__internet-logo"><img src="./assets/icons/logo-blue-big.png" alt="Max"/></div>
+                                <div class="plano-card__name">G-Lab 400Mbps</div>
                                 <div class="plano-card__speed">400 <span>Mbps</span></div>
                                 <div class="plano-card__upload">↑ até 200 Mbps</div>
                                 <div class="plano-card__price"><small>R$</small>89<sup>,90</sup>/mês</div>
@@ -343,6 +347,8 @@
                             </div>
                             <div class="plano-card plano-card--featured reveal">
                                 <div class="plano-card__badge">Mais Popular</div>
+                                <div class="plano-card__internet-logo"><img src="./assets/icons/logo-blue-big.png" alt="Max"/></div>
+                                <div class="plano-card__name">G-Lab 500Mbps</div>
                                 <div class="plano-card__speed">500 <span>Mbps</span></div>
                                 <div class="plano-card__upload">↑ até 250 Mbps</div>
                                 <div class="plano-card__price"><small>R$</small>99<sup>,90</sup>/mês</div>
@@ -355,6 +361,8 @@
                                 <p class="plano-card__note">*Valores válidos até o vencimento</p>
                             </div>
                             <div class="plano-card reveal">
+                                <div class="plano-card__internet-logo"><img src="./assets/icons/logo-blue-big.png" alt="Max"/></div>
+                                <div class="plano-card__name">G-Lab 700Mbps</div>
                                 <div class="plano-card__speed">700 <span>Mbps</span></div>
                                 <div class="plano-card__upload">↑ até 350 Mbps</div>
                                 <div class="plano-card__price"><small>R$</small>119<sup>,90</sup>/mês</div>
@@ -382,6 +390,7 @@
                         <div class="planos__grid" id="grid-max">
                         <div class="plano-card reveal">
                             <div class="plano-card__stream-logo"><img src="./assets/icons/logo-max.png" alt="Max"/> +</div>
+                            <div class="plano-card__name">HBO MAX 550Mbps</div>
                             <div class="plano-card__speed">550 <span>Mbps</span></div>
                             <div class="plano-card__upload">↑ até 275 Mbps</div>
                             <div class="plano-card__price"><small>R$</small>109<sup>,90</sup>/mês</div>
@@ -392,6 +401,7 @@
                         <div class="plano-card plano-card--featured reveal">
                             <div class="plano-card__badge">Mais Popular</div>
                             <div class="plano-card__stream-logo"><img src="./assets/icons/logo-max.png" alt="Max"/> +</div>
+                            <div class="plano-card__name">HBO MAX 650Mbps</div>
                             <div class="plano-card__speed">650 <span>Mbps</span></div>
                             <div class="plano-card__upload">↑ até 325 Mbps</div>
                             <div class="plano-card__price"><small>R$</small>119<sup>,90</sup>/mês</div>
@@ -401,6 +411,7 @@
                         </div>
                         <div class="plano-card reveal">
                             <div class="plano-card__stream-logo"><img src="./assets/icons/logo-max.png" alt="Max"/> +</div>
+                            <div class="plano-card__name">HBO MAX 800Mbps</div>
                             <div class="plano-card__speed">800 <span>Mbps</span></div>
                             <div class="plano-card__upload">↑ até 400 Mbps</div>
                             <div class="plano-card__price"><small>R$</small>129<sup>,90</sup>/mês</div>
@@ -412,48 +423,48 @@
                         <!-- WatchBR -->
                         <div class="planos__grid is-hidden" id="grid-watchbr">
                             <div class="plano-card reveal">
-                              <div class="plano-card__stream-logo"><img src="./assets/icons/logo-watch-full.png" alt="WatchBR"/> +</div>
-                              <div class="plano-card__name">HUB ULTRA LOCAL PRO</div>
-                              <div class="plano-card__speed">300 <span>Mbps</span></div>
-                              <div class="plano-card__upload">↑ até 150 Mbps</div>
-                              <div class="plano-card__price"><small>R$</small>109<sup>,90</sup>/mês</div>
-                              <ul class="plano-card__features"><li><i class="ph ph-check"></i> 26 canais</li><li><i class="ph ph-check"></i> Telecine</li><li><i class="ph ph-check"></i> 8 perfis simultâneos</li><li><i class="ph ph-check"></i> Até 4 telas simultâneas</li></ul>
-                              <a href="https://api.whatsapp.com/send?phone=5511948830455&text=Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20HUB%20ULTRA%20LOCAL%20PRO%20de%20300%20Mbps" target="_blank" rel="noopener" class="btn btn--outline-light btn--full">Contratar</a>
-                              <p class="plano-card__note">*Valores válidos até o vencimento</p>
-                            </div>
-                            <div class="plano-card plano-card--featured reveal">
-                              <div class="plano-card__badge">Mais Popular</div>
-                              <div class="plano-card__stream-logo"><img src="./assets/icons/logo-watch-full.png"alt="WatchBR"/> +</div>
-                              <div class="plano-card__name">POWER ULTRA </div>
-                              <div class="plano-card__speed">550 <span>Mbps</span></div>
-                              <div class="plano-card__upload">↑ até 275 Mbps</div>
-                              <div class="plano-card__price"><small>R$</small>139<sup>,90</sup>/mês</div>
-                              <ul class="plano-card__features"><li><i class="ph ph-check"></i> 46 canais</li><li><i class="ph ph-check"></i>Telecine</li><li><i class="ph ph-check"></i> ESPN e Sportv</li><li><i class="ph ph-check"></i> Até 4 telas simultâneas</li></ul>
-                              <a href="https://api.whatsapp.com/send?phone=5511948830455&text=Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20POWER%20ULTRA%20de%20550%20Mbps" target="_blank" rel="noopener" class="btn btn--white btn--full">Contratar</a>
-                              <p class="plano-card__note">*Valores válidos até o vencimento</p>
-                            </div>
-                            <div class="plano-card reveal">
-                                <div class="plano-card__stream-logo"><img src="./assets/icons/logo-watch-full.png" alt="WatchBR"/> +</div>
-                                <div class="plano-card__name">HUB MIX LOCAL PRO</div>
-                                <div class="plano-card__speed">650 <span>Mbps</span></div>
-                                <div class="plano-card__upload">↑ até 325 Mbps</div>
-                                <div class="plano-card__price"><small>R$</small>155<sup>,90</sup>/mês</div>
-                                <ul class="plano-card__features"><li><i class="ph ph-check"></i> 12 canais + Telecine</li><li><i class="ph ph-check"></i>HBO MAX</li><li><i class="ph ph-check"></i> Canais abertos e fechados</li><li><i class="ph ph-check"></i> Até 4 telas simultâneas</li></ul>
-                                <a href="https://api.whatsapp.com/send?phone=5511948830455&text=Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20HUB%20MIX%20LOCAL%20PRO%20de%20650%20Mbps" target="_blank" rel="noopener" class="btn btn--outline-light btn--full">Contratar</a>
-                              <p class="plano-card__note">*Valores válidos até o vencimento</p>
-                            </div>
-                            <div class="plano-card plano-card--featured-complete reveal">
-                              <div class="plano-card__badge-complete">Mais Completo</div>
-                              <div class="plano-card__stream-logo"><img src="./assets/icons/logo-watch-full.png" alt="WatchBR"/> +</div>
-                              <div class="plano-card__name">POWER ELITE</div>
-                              <div class="plano-card__speed">800 <span>Mbps</span></div>
-                              <div class="plano-card__upload">↑ até 400 Mbps</div>
-                              <div class="plano-card__price"><small>R$</small>199<sup>,90</sup>/mês</div>
-                              <ul class="plano-card__features"><li><i class="ph ph-check"></i> 54 canais + Telecine</li><li><i class="ph ph-check"></i>Premiere</li><li><i class="ph ph-check"></i> ESPN e Sportv</li><li><i class="ph ph-check"></i> Até 4 telas simultâneas</li></ul>
-                              <a href="https://api.whatsapp.com/send?phone=5511948830455&text=Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20POWER%20ELITE%20de%20800%20Mbps" target="_blank" rel="noopener" class="btn btn--outline-light btn--full">Contratar</a>
+                            <div class="plano-card__stream-logo"><img src="./assets/icons/logo-watch-full.png" alt="WatchBR"/> +</div>
+                            <div class="plano-card__name">HUB ULTRA LOCAL PRO</div>
+                            <div class="plano-card__speed">300 <span>Mbps</span></div>
+                            <div class="plano-card__upload">↑ até 150 Mbps</div>
+                            <div class="plano-card__price"><small>R$</small>109<sup>,90</sup>/mês</div>
+                            <ul class="plano-card__features"><li><i class="ph ph-check"></i> 26 canais</li><li><i class="ph ph-check"></i> Telecine</li><li><i class="ph ph-check"></i> 8 perfis simultâneos</li><li><i class="ph ph-check"></i> Até 4 telas simultâneas</li></ul>
+                            <a href="https://api.whatsapp.com/send?phone=5511948830455&text=Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20HUB%20ULTRA%20LOCAL%20PRO%20de%20300%20Mbps" target="_blank" rel="noopener" class="btn btn--outline-light btn--full">Contratar</a>
                             <p class="plano-card__note">*Valores válidos até o vencimento</p>
-                            </div>
                         </div>
+                        <div class="plano-card plano-card--featured reveal">
+                            <div class="plano-card__badge">Mais Popular</div>
+                            <div class="plano-card__stream-logo"><img src="./assets/icons/logo-watch-full.png"alt="WatchBR"/> +</div>
+                            <div class="plano-card__name">POWER ULTRA </div>
+                            <div class="plano-card__speed">550 <span>Mbps</span></div>
+                            <div class="plano-card__upload">↑ até 275 Mbps</div>
+                            <div class="plano-card__price"><small>R$</small>139<sup>,90</sup>/mês</div>
+                            <ul class="plano-card__features"><li><i class="ph ph-check"></i> 46 canais</li><li><i class="ph ph-check"></i>Telecine</li><li><i class="ph ph-check"></i> ESPN e Sportv</li><li><i class="ph ph-check"></i> Até 4 telas simultâneas</li></ul>
+                            <a href="https://api.whatsapp.com/send?phone=5511948830455&text=Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20POWER%20ULTRA%20de%20550%20Mbps" target="_blank" rel="noopener" class="btn btn--white btn--full">Contratar</a>
+                            <p class="plano-card__note">*Valores válidos até o vencimento</p>
+                        </div>
+                        <div class="plano-card reveal">
+                            <div class="plano-card__stream-logo"><img src="./assets/icons/logo-watch-full.png" alt="WatchBR"/> +</div>
+                            <div class="plano-card__name">HUB MIX LOCAL PRO</div>
+                            <div class="plano-card__speed">650 <span>Mbps</span></div>
+                            <div class="plano-card__upload">↑ até 325 Mbps</div>
+                            <div class="plano-card__price"><small>R$</small>155<sup>,90</sup>/mês</div>
+                            <ul class="plano-card__features"><li><i class="ph ph-check"></i> 12 canais + Telecine</li><li><i class="ph ph-check"></i>HBO MAX</li><li><i class="ph ph-check"></i> Canais abertos e fechados</li><li><i class="ph ph-check"></i> Até 4 telas simultâneas</li></ul>
+                            <a href="https://api.whatsapp.com/send?phone=5511948830455&text=Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20HUB%20MIX%20LOCAL%20PRO%20de%20650%20Mbps" target="_blank" rel="noopener" class="btn btn--outline-light btn--full">Contratar</a>
+                            <p class="plano-card__note">*Valores válidos até o vencimento</p>
+                        </div>
+                        <div class="plano-card plano-card--featured-complete reveal">
+                            <div class="plano-card__badge-complete">Mais Completo</div>
+                            <div class="plano-card__stream-logo"><img src="./assets/icons/logo-watch-full.png" alt="WatchBR"/> +</div>
+                            <div class="plano-card__name">POWER ELITE</div>
+                            <div class="plano-card__speed">800 <span>Mbps</span></div>
+                            <div class="plano-card__upload">↑ até 400 Mbps</div>
+                            <div class="plano-card__price"><small>R$</small>199<sup>,90</sup>/mês</div>
+                            <ul class="plano-card__features"><li><i class="ph ph-check"></i> 54 canais + Telecine</li><li><i class="ph ph-check"></i>Premiere</li><li><i class="ph ph-check"></i> ESPN e Sportv</li><li><i class="ph ph-check"></i> Até 4 telas simultâneas</li></ul>
+                            <a href="https://api.whatsapp.com/send?phone=5511948830455&text=Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20POWER%20ELITE%20de%20800%20Mbps" target="_blank" rel="noopener" class="btn btn--outline-light btn--full">Contratar</a>
+                            <p class="plano-card__note">*Valores válidos até o vencimento</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

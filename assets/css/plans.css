@@ -161,6 +161,19 @@
   white-space:    nowrap;
 }
 
+.plano-card__internet-logo {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  margin-bottom:   0.9rem;
+}
+.plano-card__internet-logo img {
+  height:  35px;
+  width:   auto;
+  display: inline;
+  filter:  brightness(1.2);
+}
+
 /* Logo de streaming dentro do card */
 .plano-card__stream-logo {
   display:         flex;
