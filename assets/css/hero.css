@@ -87,8 +87,8 @@
   backdrop-filter:   blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-radius:     16px;
-  padding:           2.8rem 1.8rem;
-  width:             360px;
+  padding:           1.8rem 1rem;
+  width:             310px;
   text-align:        center;
   box-shadow:        var(--shadow-glow);
 }
@@ -138,40 +138,3 @@
   color:       rgba(255,255,255,.8);
 }
 .speed-card__features li i { color: var(--success); flex-shrink: 0; }
-
-
-/* Barra de estatísticas */
-.hero__stats {
-  position:     relative;
-  z-index:      3;
-  background:   rgba(0,0,0,.28);
-  border-top:   1px solid rgba(255,255,255,.07);
-}
-
-.hero__stats-grid {
-  display:               grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.stat {
-  display:        flex;
-  flex-direction: column;
-  align-items:    center;
-  padding:        1.2rem 1rem;
-  border-right:   1px solid rgba(255,255,255,.07);
-  gap:            0.2rem;
-}
-.stat:last-child { border-right: none; }
-
-.stat strong {
-  font-family: 'Sora', sans-serif;
-  font-size:   1.55rem;
-  font-weight: 700;
-  color:       var(--white);
-  line-height: 1;
-}
-.stat span {
-  font-size:   0.75rem;
-  color:       var(--mid-gray);
-  font-family: 'Barlow', sans-serif;
-}
