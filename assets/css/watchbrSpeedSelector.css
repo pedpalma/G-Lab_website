@@ -1,0 +1,82 @@
+/* Grupo de botões de velocidade dentro de cada card */
+.wbr-speed-selector {
+  display:         flex;
+  justify-content: center;
+  gap:             0.3rem;
+  margin-bottom:   0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Botão individual de velocidade */
+.wbr-speed-btn {
+  font-family:   'Sora', sans-serif;
+  font-size:     0.7rem;
+  font-weight:   600;
+  padding:       0.3rem 0.7rem;
+  border-radius: 50px;
+  border:        1.5px solid rgba(255, 255, 255, .2);
+  background:    transparent;
+  color:         rgba(255, 255, 255, .55);
+  cursor:        pointer;
+  line-height:   1;
+  transition:
+    background   var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    color        var(--dur) var(--ease),
+    box-shadow   var(--dur) var(--ease),
+    transform    var(--dur) var(--ease);
+}
+
+.wbr-speed-btn:hover {
+  border-color: var(--cyan);
+  color:        var(--cyan);
+  background:   rgba(0, 198, 255, .08);
+}
+
+/* Estado ativo */
+.wbr-speed-btn--active {
+  background:   var(--cyan);
+  border-color: var(--cyan);
+  color:        var(--navy);
+  box-shadow:   0 0 12px rgba(0, 198, 255, .35);
+  transform:    translateY(-1px);
+}
+.wbr-speed-btn--active:hover {
+  background:   var(--cyan);
+  border-color: var(--cyan);
+  color:        var(--navy);
+}
+
+/* No card featured (fundo azul), ajusta contraste do botão inativo */
+.plano-card--featured .wbr-speed-btn {
+  border-color: rgba(255, 255, 255, .3);
+  color:        rgba(255, 255, 255, .65);
+}
+.plano-card--featured .wbr-speed-btn:hover {
+  border-color: var(--cyan);
+  color:        var(--cyan);
+  background:   rgba(0, 198, 255, .15);
+}
+.plano-card--featured .wbr-speed-btn--active {
+  background:   var(--cyan);
+  border-color: var(--cyan);
+  color:        var(--navy);
+}
+
+/* ── Animação de atualização de valores ── */
+@keyframes wbr-value-pop {
+  0%   { opacity: 0; transform: translateY(-5px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+.wbr-value-updated {
+  animation: wbr-value-pop 0.25s var(--ease) forwards;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 480px) {
+  .wbr-speed-btn {
+    font-size: 0.65rem;
+    padding:   0.26rem 0.55rem;
+  }
+}
