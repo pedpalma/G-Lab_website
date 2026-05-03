@@ -6,32 +6,27 @@
  * Digita, apaga e passa para a próxima palavra em loop.
 
 /** Palavras que serão alternadas no destaque do título */
-var WORDS = [
-  'limites',
-  'interrupções',
-  'travamentos',
-  'instabilidade',
-];
+var WORDS = ["limites", "interrupções", "travamentos", "instabilidade"];
 
 /** Velocidades em ms */
-var TYPE_SPEED   = 80;
+var TYPE_SPEED = 80;
 var DELETE_SPEED = 45;
-var PAUSE_AFTER  = 2200;
+var PAUSE_AFTER = 2200;
 var PAUSE_BEFORE = 400;
 
 export function initTypewriter() {
-  var el = document.querySelector('.hero__title--accent');
+  var el = document.querySelector(".hero__title--accent");
   if (!el) return;
 
   /* Cursor piscante — injetado via CSS abaixo */
-  el.classList.add('typewriter');
+  el.classList.add("typewriter");
 
   var wordIndex = 0;
   var charIndex = 0;
-  var deleting  = false;
+  var deleting = false;
 
   function tick() {
-    var word    = WORDS[wordIndex % WORDS.length];
+    var word = WORDS[wordIndex % WORDS.length];
     var current = word.substring(0, charIndex);
     el.textContent = current;
 

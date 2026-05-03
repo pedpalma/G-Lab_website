@@ -1,25 +1,24 @@
 /* Este arquivo importa e inicializa todos os módulos JS após o DOM estar completamente carregado. */
 
-import { initHeaderScroll  } from './headerScroll.js';
-import { initMobileMenu    } from './mobileMenu.js';
-import { initScrollSpy     } from './scrollSpy.js';
-import { initSmoothScroll  } from './smoothScroll.js';
-import { initScrollReveal  } from './scrollReveal.js';
-import { initTabs          } from './tabs.js';
-import { initStreamTabs    } from './streamTabs.js';
-import { initFaq           } from './faq.js';
-import { initStatsCounter  } from './statsCounter.js';
-import { initWatchbrSelector } from './watchbrSelector.js';
-import { initEnhancements } from './enhancements.js';
-import { initHeroSlider } from './heroSlider.js';
-import { initCursor } from './cursor.js';
-import { initTypewriter } from './typewriter.js';
-import { initTilt } from './tilt.js';
-import { initScrollProgress } from './scrollProgress.js';
+import { initHeaderScroll } from "./headerScroll.js";
+import { initMobileMenu } from "./mobileMenu.js";
+import { initScrollSpy } from "./scrollSpy.js";
+import { initSmoothScroll } from "./smoothScroll.js";
+import { initScrollReveal } from "./scrollReveal.js";
+import { initTabs } from "./tabs.js";
+import { initStreamTabs } from "./streamTabs.js";
+import { initFaq } from "./faq.js";
+import { initStatsCounter } from "./statsCounter.js";
+import { initWatchbrSelector } from "./watchbrSelector.js";
+import { initEnhancements } from "./enhancements.js";
+import { initHeroSlider } from "./heroSlider.js";
+import { initCursor } from "./cursor.js";
+import { initTypewriter } from "./typewriter.js";
+import { initTilt } from "./tilt.js";
+import { initScrollProgress } from "./scrollProgress.js";
 
 /* ── Aguarda o DOM estar pronto ── */
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener("DOMContentLoaded", () => {
   /* 1. Header: sombra ao rolar */
   initHeaderScroll();
 
@@ -67,5 +66,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ProgressBar */
   initScrollProgress();
-
 });
