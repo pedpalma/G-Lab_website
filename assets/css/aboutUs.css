@@ -6,14 +6,14 @@
   padding: clamp(3rem, 6vw, 3rem) 0;
   position: relative;
 
-  background: 
+  background:
     linear-gradient(
       90deg,
-      rgba(4,18,43,.90) 0%,
-      rgba(10,31,74,.80) 55%,
-      rgba(13,39,96,.55) 100%
+      rgba(4, 18, 43, 0.9) 0%,
+      rgba(10, 31, 74, 0.8) 55%,
+      rgba(13, 39, 96, 0.55) 100%
     ),
-    url('../images/content-gamer.jpg');
+    url("../images/content-gamer.jpg");
 
   background-size: cover;
   background-position: center 30%;
@@ -21,17 +21,20 @@
 
 /* Layout 2 colunas: texto */
 .sobre__inner {
-  display:               grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:                   4rem;
-  align-items:           center;
+  gap: 4rem;
+  align-items: center;
 }
 
-.sobre__text .section-title { margin-bottom: 1.2rem; color: var(--mid-gray); }
+.sobre__text .section-title {
+  margin-bottom: 1.2rem;
+  color: var(--mid-gray);
+}
 
 .sobre__text p {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size:   0.97rem;
-  color:       var(--off-white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.97rem;
+  color: var(--off-white);
   margin-bottom: 0.9rem;
 }

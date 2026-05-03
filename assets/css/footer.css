@@ -2,16 +2,20 @@
                             FOOTER
 ════════════════════════════════════════════════════════════════ */
 
-.footer { background: var(--navy); }
+.footer {
+  background: var(--navy);
+}
 
 /* Parte superior */
-.footer__top { padding: clamp(3rem, 6vw, 5rem) 0 2rem; }
+.footer__top {
+  padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+}
 
 /* Grid 4 colunas */
 .footer__grid {
-  display:               grid;
+  display: grid;
   grid-template-columns: 2fr 1fr 1.4fr 1fr;
-  gap:                   2.5rem;
+  gap: 2.5rem;
 }
 
 @media (max-width: 768px) {
@@ -22,103 +26,108 @@
 }
 /* Coluna de marca */
 .footer__brand {
-  display:        flex;
+  display: flex;
   flex-direction: column;
-  gap:            0.9rem;
+  gap: 0.9rem;
 }
 
 .footer__logo-img {
-  height:          44px;
-  width:           auto;
-  object-fit:      contain;
+  height: 44px;
+  width: auto;
+  object-fit: contain;
   object-position: left;
 }
 
 .footer__brand p {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size:   0.83rem;
-  color:       var(--mid-gray);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.83rem;
+  color: var(--mid-gray);
   line-height: 1.7;
-  max-width:   30ch;
+  max-width: 30ch;
 }
 
-.footer__cnpj { font-size: 0.7rem !important; opacity: 0.55; }
+.footer__cnpj {
+  font-size: 0.7rem !important;
+  opacity: 0.55;
+}
 
 /* Colunas de links */
 .footer__col h4 {
-  font-family:    'Space Grotesk', sans-serif;
-  font-size:      0.74rem;
-  font-weight:    700;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color:          rgba(255,255,255,.45);
-  margin-bottom:  1.1rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 1.1rem;
 }
 
 .footer__col ul {
-  display:        flex;
+  display: flex;
   flex-direction: column;
-  gap:            0.6rem;
+  gap: 0.6rem;
 }
 
 .footer__col ul a {
-  display:     flex;
+  display: flex;
   align-items: center;
-  gap:         0.4rem;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size:   0.85rem;
-  color:       var(--mid-gray);
-  transition:  color var(--dur);
+  gap: 0.4rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  color: var(--mid-gray);
+  transition: color var(--dur);
 }
-.footer__col ul a:hover { color: var(--white); }
+.footer__col ul a:hover {
+  color: var(--white);
+}
 
 /* Ícones de redes sociais */
 .footer__socials {
-  display:       flex;
-  gap:           0.7rem;
+  display: flex;
+  gap: 0.7rem;
   margin-bottom: 0.9rem;
 }
 
 .footer__socials a {
-  width:           38px;
-  height:          38px;
-  border-radius:   8px;
-  border:          1px solid rgba(255,255,255,.1);
-  display:         flex;
-  align-items:     center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size:       1.05rem;
-  color:           var(--mid-gray);
-  transition:      all var(--dur);
+  font-size: 1.05rem;
+  color: var(--mid-gray);
+  transition: all var(--dur);
 }
 .footer__socials a:hover {
   border-color: var(--cyan);
-  color:        var(--cyan);
-  background:   rgba(0,198,255,.08);
+  color: var(--cyan);
+  background: rgba(0, 198, 255, 0.08);
 }
 
 .footer__social-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size:   0.76rem;
-  color:       var(--mid-gray);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.76rem;
+  color: var(--mid-gray);
 }
 
 /* Barra de copyright */
 .footer__bottom {
-  border-top: 1px solid rgba(255,255,255,.05);
-  padding:    1.2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 0;
 }
 
 .footer__bottom-inner {
-  display:         flex;
+  display: flex;
   justify-content: space-between;
-  align-items:     center;
-  flex-wrap:       wrap;
-  gap:             0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .footer__bottom p {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size:   0.75rem;
-  color:       rgba(255,255,255,.28);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.28);
 }

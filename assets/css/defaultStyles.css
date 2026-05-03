@@ -118,3 +118,28 @@ button { font-family: inherit; }
   margin-bottom: 0.5rem;
 }
 .section-label--light { color: var(--cyan); }
+
+/* ── Scrollbar personalizada ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background:    linear-gradient(180deg, var(--blue-mid), var(--cyan));
+  border-radius: 100px;
+  box-shadow:    0 0 8px rgba(0, 198, 255, .5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--cyan), var(--blue-mid));
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--navy-mid) var(--mid-gray);
+}

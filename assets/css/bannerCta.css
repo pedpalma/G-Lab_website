@@ -6,48 +6,51 @@
   min-height: 300px;
   position: relative;
   overflow: hidden;
-  padding:  clamp(4rem, 7vw, 6rem) 0;
+  padding: clamp(4rem, 7vw, 6rem) 0;
 }
 
 /* Imagem de fundo */
 .banner-cta__bg {
-  position:            absolute;
-  inset:               0;
-  z-index:             0;
-  background-image: url('../images/background-blue-woman.jpg');
-  background-size:     cover;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("../images/background-blue-woman.jpg");
+  background-size: cover;
   background-position: center 30%;
 }
 
 /* Overlay de legibilidade */
 .banner-cta__overlay {
-  position:   absolute;
-  inset:      0;
-  z-index:    1;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(4,18,43,.90)  0%,
-    rgba(10,31,74,.80) 55%,
-    rgba(13,39,96,.55) 100%
+    rgba(4, 18, 43, 0.9) 0%,
+    rgba(10, 31, 74, 0.8) 55%,
+    rgba(13, 39, 96, 0.55) 100%
   );
 }
 
 /* Conteúdo: texto (esq) + botão (dir) */
 .banner-cta__inner {
-  position:        relative;
-  z-index:         2;
-  display:         flex;
-  align-items:     center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap:             3rem;
-  flex-wrap:       wrap;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
-.banner-cta__title { color: var(--white); margin-bottom: 0.8rem; }
+.banner-cta__title {
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
 
 .banner-cta__sub {
-  font-family: 'Barlow', sans-serif;
-  font-size:   0.96rem;
-  color:       rgba(255,255,255,.7);
-  max-width:   48ch;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 48ch;
 }

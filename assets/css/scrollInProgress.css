@@ -1,18 +1,16 @@
 /* ════════════════════════════════════════════════════════════════
-                            REVEAL
+                    SCROLL PROGRESS BAR
 ════════════════════════════════════════════════════════════════ */
 
-.reveal {
-  filter: blur(2px);
-  transition:
-    opacity 0.7s var(--ease),
-    transform 0.7s var(--ease),
-    filter 0.7s var(--ease);
-  transform: translateY(28px);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue-mid), var(--cyan));
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
 }

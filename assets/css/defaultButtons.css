@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
   font-size: 0.88rem;
   border-radius: 6px;
@@ -16,83 +16,102 @@
   cursor: pointer;
   border: 2px solid transparent;
   transition:
-    background    var(--dur) var(--ease),
-    border-color  var(--dur) var(--ease),
-    color         var(--dur) var(--ease),
-    transform     var(--dur) var(--ease),
-    box-shadow    var(--dur) var(--ease);
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
   white-space: nowrap;
   line-height: 1;
 }
 
 /* Modificadores de tamanho */
-.btn--lg   { padding: 0.88rem 2rem;   font-size: 0.96rem; }
-.btn--sm   { padding: 0.46rem 0.95rem; font-size: 0.78rem; }
-.btn--full { width: 100%; }
+.btn--lg {
+  padding: 0.88rem 2rem;
+  font-size: 0.96rem;
+}
+.btn--sm {
+  padding: 0.46rem 0.95rem;
+  font-size: 0.78rem;
+}
+.btn--full {
+  width: 100%;
+}
 
 /* Botão primário — gradiente animado (shimmer) */
 .btn--primary {
-  background:          linear-gradient(90deg, var(--blue-mid), var(--cyan), var(--blue-mid));
-  background-size:     200% 100%;
+  background: linear-gradient(
+    90deg,
+    var(--blue-mid),
+    var(--cyan),
+    var(--blue-mid)
+  );
+  background-size: 200% 100%;
   background-position: 0% 50%;
-  border-color:        transparent;
-  animation:           btn-shimmer 3.5s ease infinite;
+  border-color: transparent;
+  animation: btn-shimmer 3.5s ease infinite;
 }
- 
+
 .btn--primary:hover {
   background-position: 100% 50%;
-  border-color:        transparent;
-  box-shadow:          0 6px 28px rgba(0, 198, 255, .40);
-  transform:           translateY(-2px);
+  border-color: transparent;
+  box-shadow: 0 6px 28px rgba(0, 198, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 /* fantasma */
 .btn--ghost {
-  background:   transparent;
-  color:        var(--white);
-  border-color: rgba(255,255,255,.45);
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 .btn--ghost:hover {
   border-color: var(--white);
-  background:   rgba(255,255,255,.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* outline nav (botões secundários no header) */
 .btn--outline-nav {
-  background:   transparent;
-  color:        var(--white);
-  border-color: rgba(255,255,255,.3);
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .btn--outline-nav:hover {
   border-color: var(--cyan);
-  color:        var(--cyan);
+  color: var(--cyan);
 }
 
 /* outline light (cards de plano em fundo escuro) */
 .btn--outline-light {
-  background:   transparent;
-  color:        var(--white);
-  border-color: rgba(255,255,255,.35);
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 .btn--outline-light:hover {
-  background:   rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--white);
 }
 
 /* branco sólido (sobre fundos azuis) */
 .btn--white {
-  background:   var(--white);
-  color:        var(--navy);
+  background: var(--white);
+  color: var(--navy);
   border-color: var(--white);
 }
 .btn--white:hover {
   background: var(--off-white);
-  transform:  translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255,255,255,.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
 }
- 
+
 @keyframes btn-shimmer {
-  0%   { background-position:   0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position:   0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

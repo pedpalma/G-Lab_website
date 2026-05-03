@@ -3,78 +3,233 @@
 ════════════════════════════════════════════════════════════════ */
 
 .faq {
-  padding:    clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(4rem, 8vw, 7rem) 0;
   background: var(--white);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Número decorativo gigante no fundo */
+.faq::before {
+  content: "?";
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: clamp(18rem, 28vw, 32rem);
+  font-weight: 700;
+  color: rgba(4, 18, 43, 0.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.faq .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Layout: título à esquerda + accordion à direita ── */
+.faq__layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Coluna esquerda — título + texto fixo */
+.faq__aside {
+  position: sticky;
+  top: calc(var(--topbar-h) + var(--header-h) + 2rem);
+}
+
+.faq__aside .section-label {
+  margin-bottom: 0.5rem;
+}
+
+.faq__aside h2 {
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.faq__aside p {
+  font-size: 0.88rem;
+  color: #5a6a8a;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+/* Linha decorativa vertical */
+.faq__aside-line {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(180deg, var(--cyan), transparent);
+  margin-bottom: 1.8rem;
+}
+
+/* Botão de contato no aside */
+.faq__aside-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-mid);
+  border-bottom: 1.5px solid rgba(16, 69, 168, 0.3);
+  padding-bottom: 0.15rem;
+  transition:
+    color var(--dur),
+    border-color var(--dur);
+}
+.faq__aside-cta:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+/* ── Lista de itens ── */
 .faq__list {
-  max-width:      780px;
-  margin:         0 auto;
-  display:        flex;
+  display: flex;
   flex-direction: column;
-  gap:            0.7rem;
+  gap: 0;
 }
 
-/* Item do accordion */
+/* Item */
 .faq__item {
-  background:    var(--off-white);
-  border:        1px solid var(--light-gray);
-  border-radius: 10px;
-  overflow:      hidden;
-  transition:    box-shadow var(--dur);
+  border-bottom: 1px solid var(--light-gray);
+  transition: border-color var(--dur);
+}
+.faq__item:first-child {
+  border-top: 1px solid var(--light-gray);
 }
 .faq__item.is-open {
-  box-shadow:   var(--shadow-md);
-  border-color: var(--blue-mid);
+  border-color: rgba(0, 198, 255, 0.25);
 }
 
-/* Botão de pergunta */
+/* Botão da pergunta */
 .faq__question {
-  width:           100%;
-  display:         flex;
-  align-items:     center;
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap:             1rem;
-  padding:         1.2rem 1.4rem;
-  background:      none;
-  border:          none;
-  cursor:          pointer;
-  text-align:      left;
-  font-family:     'Space Grotesk', sans-serif;
-  font-size:       0.92rem;
-  font-weight:     600;
-  color:           var(--navy);
-  transition:      color var(--dur);
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--navy);
+  transition: color var(--dur);
+}
+.faq__item.is-open .faq__question {
+  color: var(--blue-mid);
 }
 
-/* Ícone caret rotaciona quando aberto */
-.faq__icon {
-  font-size:  1rem;
-  color:      var(--blue-mid);
+/* Número da pergunta */
+.faq__question-num {
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
   flex-shrink: 0;
-  transition: transform 0.32s var(--ease);
+  width: 1.8rem;
+  opacity: 0.7;
+  transition: opacity var(--dur);
 }
-.faq__item.is-open .faq__question { color: var(--blue-mid); }
-.faq__item.is-open .faq__icon     { transform: rotate(180deg); }
+.faq__item.is-open .faq__question-num,
+.faq__item:hover .faq__question-num {
+  opacity: 1;
+}
 
-/* Resposta animação via max-height */
+.faq__question-text {
+  flex: 1;
+}
+
+/* Ícone — cruze em X quando aberto */
+.faq__icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(4, 18, 43, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.faq__item.is-open .faq__icon-wrap {
+  background: var(--blue-mid);
+  border-color: var(--blue-mid);
+  transform: rotate(45deg);
+}
+
+.faq__icon {
+  font-size: 0.85rem;
+  color: var(--navy);
+  transition: color var(--dur);
+}
+.faq__item.is-open .faq__icon {
+  color: var(--white);
+}
+
+/* Resposta */
 .faq__answer {
   max-height: 0;
-  overflow:   hidden;
-  transition: max-height 0.4s var(--ease), padding 0.3s;
-  padding:    0 1.4rem;
+  overflow: hidden;
+  transition:
+    max-height 0.4s var(--ease),
+    padding 0.3s;
+  padding: 0;
 }
 .faq__item.is-open .faq__answer {
   max-height: 400px;
-  padding:    0 1.4rem 1.3rem;
+  padding: 0 0 1.4rem 2.5rem;
 }
 
-.faq__answer p, .faq__answer ol {
-  font-family:   'Space Grotesk', sans-serif;
-  font-size:     0.9rem;
-  color:         #5a6a8a;
-  line-height:   1.75;
+.faq__answer p,
+.faq__answer ol {
+  font-family: "Barlow", sans-serif;
+  font-size: 0.88rem;
+  color: #5a6a8a;
+  line-height: 1.8;
   margin-bottom: 0.7rem;
 }
-.faq__answer ol { padding-left: 1.3rem; }
-.faq__answer a  { color: var(--blue-mid); text-decoration: underline; }
+.faq__answer ol {
+  padding-left: 1.3rem;
+}
+.faq__answer a {
+  color: var(--blue-mid);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(16, 69, 168, 0.3);
+  transition:
+    color var(--dur),
+    border-color var(--dur);
+}
+.faq__answer a:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 900px) {
+  .faq__layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .faq__aside {
+    position: static;
+  }
+  .faq__aside-line {
+    display: none;
+  }
+}

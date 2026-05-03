@@ -1,0 +1,55 @@
+/* ════════════════════════════════════════════════════════════════
+                    CURSOR PERSONALIZADO
+════════════════════════════════════════════════════════════════ */
+
+/* Oculta o cursor nativo apenas em desktop */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: none !important;
+  }
+
+  /* Ponto central */
+  .cursor__dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow:
+      0 0 10px rgba(0, 198, 255, 0.9),
+      0 0 20px rgba(0, 198, 255, 0.4);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition:
+      transform 0.08s ease,
+      opacity 0.2s ease;
+    will-change: transform;
+  }
+
+  /* Hover em links e botões: anel cresce e fica mais brilhante */
+  .cursor--hovering .cursor__dot {
+    transform: translate(-50%, -50%) scale(1.6);
+    box-shadow:
+      0 0 16px rgba(0, 198, 255, 1),
+      0 0 32px rgba(0, 198, 255, 0.5);
+  }
+  .cursor--hovering .cursor__ring {
+    width: 56px;
+    height: 56px;
+    border-color: rgba(0, 198, 255, 0.9);
+    box-shadow: 0 0 12px rgba(0, 198, 255, 0.25);
+  }
+
+  /* Cursor some ao sair da janela */
+  .cursor--hidden .cursor__dot,
+  .cursor--hidden .cursor__ring {
+    opacity: 0;
+  }
+}

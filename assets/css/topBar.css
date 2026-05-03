@@ -3,28 +3,28 @@
 ════════════════════════════════════════════════════════════════ */
 
 .topbar {
-  background:    var(--navy);
-  color:         var(--mid-gray);
-  font-size:     0.75rem;
-  height:        var(--topbar-h);
-  display:       flex;
-  align-items:   center;
-  border-bottom: 1px solid rgba(255,255,255,.05);
-  position:      relative;
-  z-index:       300;
+  background: var(--navy);
+  color: var(--mid-gray);
+  font-size: 0.75rem;
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 300;
 }
 
 .topbar__inner {
-  display:     flex;
+  display: flex;
   align-items: center;
-  gap:         1.4rem;
-  width:       100%;
+  gap: 1.4rem;
+  width: 100%;
 }
 
 /* Cada item de informação */
 .topbar__item {
-  display:     flex;
+  display: flex;
   align-items: center;
-  gap:         0.38rem;
-  font-family: 'Space Grotesk', sans-serif;
+  gap: 0.38rem;
+  font-family: "Space Grotesk", sans-serif;
 }

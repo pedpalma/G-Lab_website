@@ -3,79 +3,182 @@
 ════════════════════════════════════════════════════════════════ */
 
 .contato {
-  padding:    clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(4rem, 8vw, 7rem) 0;
   background: var(--navy);
-  position:   relative;
-  overflow:   hidden;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Fundo radial decorativo */
-.contato__bg {
-  position:   absolute;
-  inset:      0;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,198,255,.04) 0%, transparent 70%);
+/* Grade de linhas decorativas — textura tech */
+.contato::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 198, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 198, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
   pointer-events: none;
+  z-index: 0;
 }
-.contato .container { position: relative; z-index: 1; }
 
-/* Grid 4 colunas */
+/* Brilho radial central */
+.contato__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 50%,
+    rgba(0, 198, 255, 0.06) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contato .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Grid de cards ── */
 .contato__grid {
-  display:               grid;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:                   1.1rem;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-/* Card de canal de atendimento */
+/* ── Card ── */
 .contato-card {
-  background:      rgba(255,255,255,.04);
-  border:          1px solid rgba(255,255,255,.08);
-  border-radius:   14px;
-  padding:         2rem 1.4rem;
-  text-align:      center;
-  display:         flex;
-  flex-direction:  column;
-  align-items:     center;
-  gap:             0.45rem;
-  cursor:          pointer;
-  transition:      all var(--dur) var(--ease);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  transition:
+    transform var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
 }
+
 .contato-card:hover {
-  border-color: var(--cyan);
-  transform:    translateY(-5px);
-  box-shadow:   0 10px 40px rgba(0,0,0,.3), var(--shadow-glow);
-    box-shadow:
-    0 10px 40px rgba(0, 0, 0, .30),
-    0 0 30px rgba(0, 198, 255, .20),
-    0 0 0 1px rgba(0, 198, 255, .35);
-  
+  transform: translateY(-6px);
+  border-color: rgba(0, 198, 255, 0.4);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(0, 198, 255, 0.2),
+    0 0 40px rgba(0, 198, 255, 0.08);
 }
 
-/* Ícone circular */
-.contato-card__icon {
-  width:           52px;
-  height:          52px;
-  border-radius:   50%;
-  background:      linear-gradient(135deg, var(--blue-mid), var(--cyan));
-  display:         flex;
-  align-items:     center;
-  justify-content: center;
-  font-size:       1.45rem;
-  color:           var(--white);
-  margin-bottom:   0.4rem;
+/* Faixa de cor no topo — diferente por canal */
+.contato-card__stripe {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--blue-mid), var(--cyan));
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+.contato-card:hover .contato-card__stripe {
+  transform: scaleX(1);
 }
 
-.contato-card h3 { font-size: 0.95rem; color: var(--white); }
-.contato-card p  { font-size: 0.82rem; color: var(--mid-gray); font-family: 'Space Grotesk', sans-serif; }
+/* Conteúdo interno */
+.contato-card__inner {
+  padding: 2rem 1.6rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  flex: 1;
+}
 
-/* CTA com seta animada no hover */
-.contato-card__cta {
-  font-size:   0.76rem;
+/* Número/label grande — destaque principal */
+.contato-card__number {
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+
+/* Nome do canal */
+.contato-card__label {
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 0.68rem;
   font-weight: 600;
-  color:       var(--cyan);
-  display:     flex;
-  align-items: center;
-  gap:         0.3rem;
-  margin-top:  0.4rem;
-  transition:  gap var(--dur);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.6rem;
 }
-.contato-card:hover .contato-card__cta { gap: 0.6rem; }
+
+/* Descrição */
+.contato-card p {
+  font-family: "Barlow", sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Rodapé do card — CTA */
+.contato-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: auto;
+  transition: border-color var(--dur);
+}
+.contato-card:hover .contato-card__footer {
+  border-color: rgba(0, 198, 255, 0.15);
+}
+
+.contato-card__cta {
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap var(--dur) var(--ease);
+}
+.contato-card:hover .contato-card__cta {
+  gap: 0.7rem;
+}
+
+/* Ícone no rodapé — grande e sutil */
+.contato-card__footer-icon {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.08);
+  transition:
+    color var(--dur),
+    transform var(--dur) var(--ease);
+}
+.contato-card:hover .contato-card__footer-icon {
+  color: rgba(0, 198, 255, 0.25);
+  transform: scale(1.15) rotate(-8deg);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 1024px) {
+  .contato__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contato__grid {
+    grid-template-columns: 1fr;
+  }
+}

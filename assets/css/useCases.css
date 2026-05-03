@@ -1,64 +1,233 @@
 /* ════════════════════════════════════════════════════════════════
                           USE CASES
+   Substitui COMPLETAMENTE assets/css/useCases.css
 ════════════════════════════════════════════════════════════════ */
 
 .use-cases {
-  padding:    clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(4rem, 8vw, 7rem) 0;
   background: var(--white);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Decoração de fundo */
+.use-cases::before {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 198, 255, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.use-cases .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid — 2 cards grandes */
 .use-cases__grid {
-  display:               grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:                   1.5rem;
+  gap: 1.5rem;
 }
 
-/* Card de caso de uso */
+/* ── Card principal ── */
 .use-case-card {
-  border-radius: 8px;
-  overflow:      hidden;
-  border:        1px solid var(--light-gray);
-  background:    var(--white);
-  transition:    transform var(--dur) var(--ease), box-shadow var(--dur);
-}
-.use-case-card:hover {
-  transform:  translateY(-6px);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: var(--navy);
   box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
 }
 
-/* Wrapper da imagem */
+.use-case-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 1px rgba(0, 198, 255, 0.25),
+    0 0 40px rgba(0, 198, 255, 0.1);
+}
+
+/* ── Imagem — ocupa o card inteiro ── */
 .use-case-card__img-wrap {
-  aspect-ratio: 16 / 9;
-  overflow:     hidden;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
+
 .use-case-card__img {
-  width:      100%;
-  height:     100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.5s var(--ease);
+  display: block;
+  transition: transform 0.7s var(--ease);
+  filter: brightness(0.75) saturate(1.1);
 }
-.use-case-card:hover .use-case-card__img { transform: scale(1.05); }
 
-/* Área de texto abaixo da imagem */
+.use-case-card:hover .use-case-card__img {
+  transform: scale(1.08);
+  filter: brightness(0.6) saturate(1.2);
+}
+
+/* Overlay gradiente sobre a imagem */
+.use-case-card__img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 20%,
+    rgba(4, 18, 43, 0.55) 60%,
+    rgba(4, 18, 43, 0.92) 100%
+  );
+  transition: opacity var(--dur) var(--ease);
+}
+
+.use-case-card:hover .use-case-card__img-wrap::after {
+  opacity: 1;
+}
+
+/* Tag de categoria — estilo editorial, canto superior esquerdo */
+.use-case-card__tag {
+  position: absolute;
+  top: 0;
+  left: 1.4rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--white);
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.9rem 0.45rem 0;
+  /* Linha vertical ciano à esquerda */
+  border-left: 3px solid var(--cyan);
+  padding-left: 0.7rem;
+  /* Faixa escura atrás do texto */
+  background: linear-gradient(
+    90deg,
+    rgba(4, 18, 43, 0.82) 0%,
+    transparent 100%
+  );
+  padding-right: 2rem;
+  margin-top: 1.1rem;
+  transition:
+    border-color var(--dur),
+    color var(--dur);
+}
+
+.use-case-card__tag i {
+  color: var(--cyan);
+  font-size: 0.8rem;
+}
+
+.use-case-card:hover .use-case-card__tag {
+  color: var(--cyan);
+  border-color: var(--white);
+}
+
+/* ── Corpo do card — sobre a imagem (overlay) ── */
 .use-case-card__body {
-  padding:        1.5rem;
-  display:        flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1.6rem 1.4rem 1.4rem;
+  display: flex;
   flex-direction: column;
-  gap:            0.45rem;
+  gap: 0.4rem;
+  transform: translateY(0);
+  transition: transform 0.4s var(--ease);
 }
 
-/* Ícone do card */
-.use-case-card__icon {
-  width:           40px;
-  height:          40px;
-  border-radius:   10px;
-  display:         flex;
-  align-items:     center;
-  justify-content: center;
-  font-size:       1.25rem;
-  color:           var(--cyan);
-  margin-bottom:   0.25rem;
+.use-case-card__body h3 {
+  font-size: 1.05rem;
+  color: var(--white);
+  line-height: 1.3;
 }
 
-.use-case-card__body h3 { color: var(--navy); }
-.use-case-card__body p  { font-size: 0.86rem; color: #5a6a8a; line-height: 1.7; }
+.use-case-card__body p {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+  max-width: 42ch;
+}
+
+/* Linha decorativa abaixo do título — aparece no hover */
+.use-case-card__body h3::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+  margin-top: 0.4rem;
+  border-radius: 2px;
+  transition: width 0.4s var(--ease);
+}
+
+.use-case-card:hover .use-case-card__body h3::after {
+  width: 60px;
+}
+
+/* CTA arrow — aparece no hover */
+.use-case-card__cta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-top: 0.3rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+.use-case-card:hover .use-case-card__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.use-case-card__cta i {
+  transition: transform var(--dur) var(--ease);
+}
+.use-case-card:hover .use-case-card__cta i {
+  transform: translateX(4px);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 1024px) {
+  .use-cases__grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .use-cases__grid {
+    grid-template-columns: 1fr;
+  }
+  .use-case-card__img-wrap {
+    aspect-ratio: 16 / 9;
+  }
+}

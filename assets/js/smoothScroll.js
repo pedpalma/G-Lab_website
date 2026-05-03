@@ -1,23 +1,49 @@
+/**
+ * smoothScroll.js
+ * assets/js/smoothScroll.js
+ * * Smooth scroll com easing easeInOutCubic, mais natural e suave
+ * do que o comportamento padrão do browser.
+ */
+
 export function initSmoothScroll() {
-  const header = document.getElementById('header');
+  var header = document.getElementById("header");
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const href = anchor.getAttribute('href');
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener("click", function (e) {
+      var href = anchor.getAttribute("href");
+      if (!href || href === "#") return;
 
-      /* Ignora links sem destino ou que apontam para # (topo) */
-      if (!href || href === '#') return;
-
-      const target = document.querySelector(href);
+      var target = document.querySelector(href);
       if (!target) return;
 
       e.preventDefault();
 
-      /* Calcula posição descontando a altura do header sticky */
-      const headerHeight = header ? header.offsetHeight : 0;
-      const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 8;
+      var headerHeight = header ? header.offsetHeight : 0;
+      var targetTop =
+        target.getBoundingClientRect().top + window.scrollY - headerHeight - 8;
+      var startTop = window.scrollY;
+      var distance = targetTop - startTop;
+      var duration = Math.min(900, Math.max(400, Math.abs(distance) * 0.4));
+      var startTime = null;
 
-      window.scrollTo({ top, behavior: 'smooth' });
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var elapsed = timestamp - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var ease = easeInOutCubic(progress);
+
+        window.scrollTo(0, startTop + distance * ease);
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      requestAnimationFrame(step);
     });
   });
 }
