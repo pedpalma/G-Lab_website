@@ -47,13 +47,12 @@
   z-index: 1;
 }
 
-/* ════ TOPO ════ */
 .footer__top {
   padding: clamp(3.5rem, 6vw, 5.5rem) 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Grid principal — logo | nav | contato | social */
+/* Grid principal */
 .footer__grid {
   display: grid;
   grid-template-columns: 1.8fr 1fr 1.4fr 1fr;

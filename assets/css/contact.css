@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-/* Grade de linhas decorativas — textura tech */
+/* Grade de linhas decorativas */
 .contato::before {
   content: "";
   position: absolute;
@@ -75,7 +75,7 @@
     0 0 40px rgba(0, 198, 255, 0.08);
 }
 
-/* Faixa de cor no topo — diferente por canal */
+/* Faixa de cor no topo*/
 .contato-card__stripe {
   height: 4px;
   width: 100%;
@@ -98,7 +98,7 @@
   flex: 1;
 }
 
-/* Número/label grande — destaque principal */
+/* Número/label grande */
 .contato-card__number {
   font-family: "Space Grotesk", "Sora", sans-serif;
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -129,7 +129,7 @@
   margin: 0;
 }
 
-/* Rodapé do card — CTA */
+/* Rodapé do card */
 .contato-card__footer {
   display: flex;
   align-items: center;
@@ -157,7 +157,7 @@
   gap: 0.7rem;
 }
 
-/* Ícone no rodapé — grande e sutil */
+/* Ícone no rodapé */
 .contato-card__footer-icon {
   font-size: 1.6rem;
   color: rgba(255, 255, 255, 0.08);

@@ -38,7 +38,7 @@
   width: 100%;
 }
 
-/* Botão primário — gradiente animado (shimmer) */
+/* Botão primário animado (shimmer) */
 .btn--primary {
   background: linear-gradient(
     90deg,

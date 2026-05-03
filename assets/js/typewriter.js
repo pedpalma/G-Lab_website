@@ -18,7 +18,7 @@ export function initTypewriter() {
   var el = document.querySelector(".hero__title--accent");
   if (!el) return;
 
-  /* Cursor piscante — injetado via CSS abaixo */
+  /* Cursor piscante */
   el.classList.add("typewriter");
 
   var wordIndex = 0;

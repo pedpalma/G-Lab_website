@@ -1,6 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
                             Benefits
-   Substitui COMPLETAMENTE assets/css/benefits.css
 ════════════════════════════════════════════════════════════════ */
 
 .diferenciais {
@@ -10,7 +9,7 @@
   overflow: hidden;
 }
 
-/* Decoração de fundo — círculos sutis */
+/* Decoração de fundo*/
 .diferenciais::after {
   content: "";
   position: absolute;

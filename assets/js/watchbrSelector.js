@@ -15,11 +15,6 @@
  *   · Mensagem do WhatsApp
  *
  * Para ajustar preços, edite os objetos dentro de WBR_PLANS abaixo.
- *
- * Integração em main.js:
- *   import { initWatchbrSelector } from './watchbrSelector.js';
- *   // dentro do DOMContentLoaded, após initStreamTabs():
- *   initWatchbrSelector();
  * ─────────────────────────────────────────────────────────────────
  */
 

@@ -39,7 +39,7 @@
   align-items: start;
 }
 
-/* Coluna esquerda — título + texto fixo */
+/* Coluna esquerda */
 .faq__aside {
   position: sticky;
   top: calc(var(--topbar-h) + var(--header-h) + 2rem);
@@ -152,7 +152,7 @@
   flex: 1;
 }
 
-/* Ícone — cruze em X quando aberto */
+/* Ícone */
 .faq__icon-wrap {
   width: 28px;
   height: 28px;

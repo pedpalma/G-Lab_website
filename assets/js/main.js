@@ -8,7 +8,6 @@ import { initScrollReveal } from "./scrollReveal.js";
 import { initTabs } from "./tabs.js";
 import { initStreamTabs } from "./streamTabs.js";
 import { initFaq } from "./faq.js";
-import { initStatsCounter } from "./statsCounter.js";
 import { initWatchbrSelector } from "./watchbrSelector.js";
 import { initEnhancements } from "./enhancements.js";
 import { initHeroSlider } from "./heroSlider.js";
@@ -43,27 +42,24 @@ document.addEventListener("DOMContentLoaded", () => {
   /* 8. FAQ Accordion: abre/fecha perguntas */
   initFaq();
 
-  /* 9. Stats Counter: anima os números do hero */
-  initStatsCounter();
-
-  /* 10. Pemite trocar a velocidade dos planos */
+  /* 9. Pemite trocar a velocidade dos planos */
   initWatchbrSelector();
 
-  /* 11. Melhorias Gerais */
+  /* 10. Melhorias Gerais */
   initEnhancements();
 
-  /* Slider */
+  /* 11. Slider */
   initHeroSlider();
 
-  /* Cursor */
+  /* 12. Cursor */
   initCursor();
 
-  /* TypeWriter */
+  /* 13. TypeWriter */
   initTypewriter();
 
-  /* Inclinação do card */
+  /* 14. Inclinação do card */
   initTilt();
 
-  /* ProgressBar */
+  /* 15. ProgressBar */
   initScrollProgress();
 });
