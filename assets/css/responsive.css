@@ -237,11 +237,6 @@ TABLET
     display: none;
   }
 
-  /* Sobre: atributos em coluna única */
-  .sobre__stats-grid {
-    grid-template-columns: 1fr;
-  }
-
   /* Streaming tabs: empilhados */
   .streaming__tabs {
     flex-direction: column;
