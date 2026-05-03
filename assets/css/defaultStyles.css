@@ -1,112 +1,153 @@
 /* universal */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-img    { max-width: 100%; display: block; }
-a      { color: inherit; text-decoration: none; }
-ul, ol { list-style: none; }
-button { font-family: inherit; }
-
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+button {
+  font-family: inherit;
+}
 
 :root {
   /* azul-escuro */
-  --navy:       #04122b;   /* topbar, footer */
-  --navy-mid:   #0a1f4a;   /* planos, hero */
-  --navy-light: #0d2760;   /* cards, sobre */
-  --blue:       #1045a8;   /* hover de botões */
-  --blue-mid:   #1558d6;   /* ação principal */
+  --navy: #04122b; /* topbar, footer */
+  --navy-mid: #0a1f4a; /* planos, hero */
+  --navy-light: #0d2760; /* cards, sobre */
+  --blue: #1045a8; /* hover de botões */
+  --blue-mid: #1558d6; /* ação principal */
 
   /* ciano */
-  --cyan:       #00c6ff;
-  --cyan-dim:   rgba(0,198,255,.12);
-  --glow:       rgba(0,198,255,.25);
+  --cyan: #00c6ff;
+  --cyan-dim: rgba(0, 198, 255, 0.12);
+  --glow: rgba(0, 198, 255, 0.25);
 
   /* Neutros */
-  --white:      #ffffff;
-  --transparent-grey:  #f4f7fe8e;
-  --off-white:  #f4f7fe;
+  --white: #ffffff;
+  --transparent-grey: #f4f7fe8e;
+  --off-white: #f4f7fe;
   --light-gray: #e8edf8;
-  --mid-gray:   #8a97b8;
-  --dark-gray:  #444d69;
-  --dark-text:  #0f1b35;
+  --mid-gray: #8a97b8;
+  --dark-gray: #444d69;
+  --dark-text: #0f1b35;
 
   /* Feedback */
-  --success:    #10d97e;
+  --success: #10d97e;
 
   /* Sombras */
-  --shadow-sm:   0 2px 8px   rgba(4,18,43,.15);
-  --shadow-md:   0 8px 32px  rgba(4,18,43,.22);
-  --shadow-lg:   0 20px 60px rgba(4,18,43,.30);
-  --shadow-glow: 0 0 40px    rgba(0,198,255,.18);
+  --shadow-sm: 0 2px 8px rgba(4, 18, 43, 0.15);
+  --shadow-md: 0 8px 32px rgba(4, 18, 43, 0.22);
+  --shadow-lg: 0 20px 60px rgba(4, 18, 43, 0.3);
+  --shadow-glow: 0 0 40px rgba(0, 198, 255, 0.18);
 
   /* Transição */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur:  0.25s;
+  --dur: 0.25s;
 
   /* Alturas fixas */
   --topbar-h: 38px;
   --header-h: 68px;
 }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--topbar-h) + var(--header-h) + 8px);
-  }
-
-  body {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--dark-text);
-    background: var(--white);
-    overflow-x: hidden;
-  }
-
-  h1, h2, h3, h4 {
-    font-family: 'Space Grotesk', 'Sora', sans-serif;
-    line-height: 1.15;
-    font-weight: 700;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--topbar-h) + var(--header-h) + 8px);
 }
 
-  
-  h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); }
-  h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); }
-  h3 { font-size: clamp(1rem, 2vw, 1.15rem); font-weight: 600; }
-  
-  /* <em> dentro de h1/h2 vira ciano */
-  em { font-style: normal; color: var(--cyan); }
-  
-  /* Parágrafos usam Barlow */
-  p { font-family: 'Space Grotesk', sans-serif; font-weight: 400; line-height: 1.75; }
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--dark-text);
+  background: var(--white);
+  overflow-x: hidden;
+}
 
-  /* Container */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 clamp(1rem, 4vw, 2.5rem);
-    width: 100%;
-  }
-  
-  
-  /* Section header */
-  .section-header { text-align: center; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
-  .section-header--light .section-title { color: var(--white); }
-  
-  .section-title        { color: var(--navy); }
-  .section-title--light { color: var(--white); }
-  
-  /* Linha decorativa abaixo do título */
-  .section-header .section-title::after {
-    content: '';
-    display: block;
-    width: 44px; height: 3px;
-    background: var(--cyan);
-    margin: 0.75rem auto 0;
-    border-radius: 2px;
-  }
-  .section-header--light .section-title::after {
-    background: rgba(0,198,255,.45);
-  }
-  
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+}
+h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+}
+h3 {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 600;
+}
+
+/* <em> dentro de h1/h2 vira ciano */
+em {
+  font-style: normal;
+  color: var(--cyan);
+}
+
+/* Parágrafos usam Space Grotesk */
+p {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  width: 100%;
+}
+
+/* Section header */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+.section-header--light .section-title {
+  color: var(--white);
+}
+
+.section-title {
+  color: var(--navy);
+}
+.section-title--light {
+  color: var(--white);
+}
+
+/* Linha decorativa abaixo do título */
+.section-header .section-title::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--cyan);
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+.section-header--light .section-title::after {
+  background: rgba(0, 198, 255, 0.45);
+}
+
 /* Label acima do título */
 .section-label {
   display: inline-block;
@@ -117,7 +158,9 @@ button { font-family: inherit; }
   color: var(--blue-mid);
   margin-bottom: 0.5rem;
 }
-.section-label--light { color: var(--cyan); }
+.section-label--light {
+  color: var(--cyan);
+}
 
 /* ── Scrollbar personalizada ── */
 ::-webkit-scrollbar {
@@ -129,9 +172,9 @@ button { font-family: inherit; }
 }
 
 ::-webkit-scrollbar-thumb {
-  background:    linear-gradient(180deg, var(--blue-mid), var(--cyan));
+  background: linear-gradient(180deg, var(--blue-mid), var(--cyan));
   border-radius: 100px;
-  box-shadow:    0 0 8px rgba(0, 198, 255, .5);
+  box-shadow: 0 0 8px rgba(0, 198, 255, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {

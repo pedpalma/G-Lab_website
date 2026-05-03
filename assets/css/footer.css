@@ -84,7 +84,7 @@
 }
 
 .footer__brand p {
-  font-family: "Barlow", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.83rem;
   color: rgba(255, 255, 255, 0.4);
   line-height: 1.75;
@@ -119,7 +119,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: "Barlow", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.84rem;
   color: rgba(255, 255, 255, 0.38);
   transition:
@@ -192,7 +192,7 @@
 }
 
 .footer__social-text {
-  font-family: "Barlow", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.73rem;
   color: rgba(255, 255, 255, 0.28);
   line-height: 1.6;
@@ -237,7 +237,7 @@
   padding: 0.45rem 0.9rem;
   border-radius: 6px;
   border: 1px dashed rgba(255, 255, 255, 0.12);
-  font-family: "Barlow", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.74rem;
   color: rgba(255, 255, 255, 0.25);
   cursor: default;
@@ -275,7 +275,7 @@ a.footer__legal-doc:hover i {
 }
 
 .footer__bottom p {
-  font-family: "Barlow", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.18);
 }
