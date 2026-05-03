@@ -1,6 +1,7 @@
 /* ════════════════════════════════════════════════════════════════
                             PLANS
-   JS       : assets/js/tabs.js (alterna abas) · assets/js/streamTabs.js
+  JS: assets/js/tabs.js (alterna abas) · assets/js/streamTabs.js
+  JS: assets/js/watchbrSelector.js
 ════════════════════════════════════════════════════════════════ */
 
 .planos {
@@ -220,15 +221,6 @@
 .plano-card__price small { font-size: 0.88rem; vertical-align: super; }
 .plano-card__price sup   { font-size: 0.88rem; }
 
-.plano-card__name {
-  font-size: 0.88rem;
-  font-weight:   700;
-  color:         var(--white);
-  margin-bottom: 1.1rem;
-  line-height:   1;
-  vertical-align: super;
-}
-
 .plano-card__features {
   display:        flex;
   flex-direction: column;
@@ -246,9 +238,156 @@
 }
 .plano-card__features li i { color: var(--success); flex-shrink: 0; }
 
+/* ── Nota de vencimento abaixo do preço ── */
+
 .plano-card__note {
-  font-size:   0.7rem;
-  color:       var(--transparent-grey);
-  font-family: 'Barlow', sans-serif;
+  font-family:   'Barlow', sans-serif;
+  font-size:     0.72rem;
+  color:         rgba(255, 255, 255, .5);
+  text-align:    center;
+  margin-bottom: 0.9rem;
+  line-height:   1.5;
   font-style: italic;
+}
+.plano-card__note strong {
+  color:       var(--cyan);
+  font-weight: 700;
+}
+
+/* ── Nome do plano ── */
+.plano-card__plan-name {
+  font-family:    'Sora', sans-serif;
+  font-size:      0.85rem;
+  font-weight:    700;
+  color:          var(--white);
+  letter-spacing: 0.04em;
+  margin-bottom:  0.6rem;
+  text-align:     center;
+}
+
+/* ── Badge "Mais Completo" ── */
+.plano-card--featured-complete {
+  background:   linear-gradient(160deg, #2a2f45, #1e2338);
+  border:       1px solid rgba(255, 255, 255, .25);
+  box-shadow:   0 0 0 1px rgba(255, 255, 255, .2), var(--shadow-md);
+}
+.plano-card--featured-complete:hover {
+  transform:  translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, .45), 0 0 0 1px rgba(255,255,255,.3);
+}
+
+.plano-card__badge-complete {
+  position:       absolute;
+  top:            -13px;
+  left:           50%;
+  transform:      translateX(-50%);
+  background:     #6c757d;
+  color:          var(--white);
+  font-family:    'Sora', sans-serif;
+  font-size:      0.67rem;
+  font-weight:    700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding:        0.22rem 0.85rem;
+  border-radius:  100px;
+  white-space:    nowrap;
+}
+
+/* ── Grupo de botões de velocidade dentro de cada card ── */
+.wbr-speed-selector {
+  display:         flex;
+  justify-content: center;
+  gap:             0.3rem;
+  margin-bottom:   0.75rem;
+  flex-wrap:       wrap;
+}
+
+/* Botão individual de velocidade */
+.wbr-speed-btn {
+  font-family:   'Sora', sans-serif;
+  font-size:     0.68rem;
+  font-weight:   600;
+  padding:       0.28rem 0.6rem;
+  border-radius: 50px;
+  border:        1.5px solid rgba(255, 255, 255, .2);
+  background:    transparent;
+  color:         rgba(255, 255, 255, .55);
+  cursor:        pointer;
+  line-height:   1;
+  transition:
+    background   var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    color        var(--dur) var(--ease),
+    box-shadow   var(--dur) var(--ease),
+    transform    var(--dur) var(--ease);
+}
+
+.wbr-speed-btn:hover {
+  border-color: var(--cyan);
+  color:        var(--cyan);
+  background:   rgba(0, 198, 255, .08);
+}
+
+/* Estado ativo */
+.wbr-speed-btn--active {
+  background:   var(--cyan);
+  border-color: var(--cyan);
+  color:        var(--navy);
+  box-shadow:   0 0 12px rgba(0, 198, 255, .35);
+  transform:    translateY(-1px);
+}
+.wbr-speed-btn--active:hover {
+  background:   var(--cyan);
+  border-color: var(--cyan);
+  color:        var(--navy);
+}
+
+/* No card featured (fundo azul), ajusta contraste do botão inativo */
+.plano-card--featured .wbr-speed-btn {
+  border-color: rgba(255, 255, 255, .3);
+  color:        rgba(255, 255, 255, .65);
+}
+.plano-card--featured .wbr-speed-btn:hover {
+  border-color: var(--cyan);
+  color:        var(--cyan);
+  background:   rgba(0, 198, 255, .15);
+}
+.plano-card--featured .wbr-speed-btn--active {
+  background:   var(--cyan);
+  border-color: var(--cyan);
+  color:        var(--navy);
+}
+
+/* No card featured-complete (fundo escuro) */
+.plano-card--featured-complete .wbr-speed-btn {
+  border-color: rgba(255, 255, 255, .2);
+  color:        rgba(255, 255, 255, .55);
+}
+.plano-card--featured-complete .wbr-speed-btn:hover {
+  border-color: var(--cyan);
+  color:        var(--cyan);
+  background:   rgba(0, 198, 255, .08);
+}
+.plano-card--featured-complete .wbr-speed-btn--active {
+  background:   var(--cyan);
+  border-color: var(--cyan);
+  color:        var(--navy);
+}
+
+/* ── Animação de atualização de valores ── */
+@keyframes wbr-value-pop {
+  0%   { opacity: 0; transform: translateY(-5px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+.wbr-value-updated {
+  animation: wbr-value-pop 0.25s var(--ease) forwards;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 480px) {
+  .wbr-speed-btn {
+    font-size: 0.62rem;
+    padding:   0.24rem 0.5rem;
+  }
 }
