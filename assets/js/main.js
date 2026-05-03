@@ -11,6 +11,7 @@ import { initFaq           } from './faq.js';
 import { initStatsCounter  } from './statsCounter.js';
 import { initWatchbrSelector } from './watchbrSelector.js';
 import { initEnhancements } from './enhancements.js';
+import { initHeroSlider } from './heroSlider.js';
 
 /* ── Aguarda o DOM estar pronto ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -47,5 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 11. Melhorias Gerais */
   initEnhancements();
+
+  /* Slider */
+  initHeroSlider();
 
 });

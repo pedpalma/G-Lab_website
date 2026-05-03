@@ -3,11 +3,23 @@
 ════════════════════════════════════════════════════════════════ */
 
 .sobre {
-  padding:    clamp(4rem, 8vw, 7rem) 0;
-  background: var(--off-white);
+  padding: clamp(3rem, 6vw, 3rem) 0;
+  position: relative;
+
+  background: 
+    linear-gradient(
+      90deg,
+      rgba(4,18,43,.90) 0%,
+      rgba(10,31,74,.80) 55%,
+      rgba(13,39,96,.55) 100%
+    ),
+    url('../images/content-gamer.jpg');
+
+  background-size: cover;
+  background-position: center 30%;
 }
 
-/* Layout 2 colunas: texto | grid de atributos */
+/* Layout 2 colunas: texto */
 .sobre__inner {
   display:               grid;
   grid-template-columns: 1fr 1fr;
@@ -15,51 +27,11 @@
   align-items:           center;
 }
 
-.sobre__text .section-title { margin-bottom: 1.2rem; }
+.sobre__text .section-title { margin-bottom: 1.2rem; color: var(--mid-gray); }
 
 .sobre__text p {
   font-family: 'Space Grotesk', sans-serif;
   font-size:   0.97rem;
-  color:       #5a6a8a;
+  color:       var(--off-white);
   margin-bottom: 0.9rem;
 }
-
-/* Tagline final da seção */
-.sobre__tagline {
-  color:       var(--navy) !important;
-  font-family: 'Space Grotesk', sans-serif !important;
-  margin-bottom: 1.6rem !important;
-}
-
-/* Grid 2×2 de atributos */
-.sobre__stats-grid {
-  display:               grid;
-  grid-template-columns: 1fr 1fr;
-  gap:                   1rem;
-}
-@media (max-width: 768px) {
-  .sobre__inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-/* Box de atributo individual */
-.sobre__stat-box {
-  background:     linear-gradient(135deg, var(--navy), var(--navy-light));
-  border-radius:  14px;
-  padding:        1.6rem 1.4rem;
-  display:        flex;
-  flex-direction: column;
-  gap:            0.35rem;
-  transition:     transform var(--dur) var(--ease);
-}
-.sobre__stat-box:hover { 
-  transform: translateY(-4px);
-  transform:  translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 198, 255, .18);
-}
-
-.sobre__stat-box i      { font-size: 1.65rem; color: var(--cyan); filter: drop-shadow(0 0 6px rgba(0, 198, 255, .5));}
-.sobre__stat-box strong { font-size: 1rem; font-weight: 700; color: var(--white); }
-.sobre__stat-box span   { font-size: 0.76rem; color: var(--mid-gray); font-family: 'Space Grotesk', sans-serif; }
