@@ -18,7 +18,7 @@
 .sobre__text .section-title { margin-bottom: 1.2rem; }
 
 .sobre__text p {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size:   0.97rem;
   color:       #5a6a8a;
   margin-bottom: 0.9rem;
@@ -27,7 +27,7 @@
 /* Tagline final da seção */
 .sobre__tagline {
   color:       var(--navy) !important;
-  font-family: 'Sora', sans-serif !important;
+  font-family: 'Space Grotesk', sans-serif !important;
   margin-bottom: 1.6rem !important;
 }
 
@@ -54,8 +54,12 @@
   gap:            0.35rem;
   transition:     transform var(--dur) var(--ease);
 }
-.sobre__stat-box:hover { transform: translateY(-4px); }
+.sobre__stat-box:hover { 
+  transform: translateY(-4px);
+  transform:  translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 198, 255, .18);
+}
 
-.sobre__stat-box i      { font-size: 1.65rem; color: var(--cyan); }
+.sobre__stat-box i      { font-size: 1.65rem; color: var(--cyan); filter: drop-shadow(0 0 6px rgba(0, 198, 255, .5));}
 .sobre__stat-box strong { font-size: 1rem; font-weight: 700; color: var(--white); }
-.sobre__stat-box span   { font-size: 0.76rem; color: var(--mid-gray); font-family: 'Barlow', sans-serif; }
+.sobre__stat-box span   { font-size: 0.76rem; color: var(--mid-gray); font-family: 'Space Grotesk', sans-serif; }

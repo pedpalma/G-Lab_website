@@ -35,7 +35,7 @@
 }
 
 .footer__brand p {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size:   0.83rem;
   color:       var(--mid-gray);
   line-height: 1.7;
@@ -46,7 +46,7 @@
 
 /* Colunas de links */
 .footer__col h4 {
-  font-family:    'Sora', sans-serif;
+  font-family:    'Space Grotesk', sans-serif;
   font-size:      0.74rem;
   font-weight:    700;
   letter-spacing: 0.12em;
@@ -65,7 +65,7 @@
   display:     flex;
   align-items: center;
   gap:         0.4rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size:   0.85rem;
   color:       var(--mid-gray);
   transition:  color var(--dur);
@@ -98,7 +98,7 @@
 }
 
 .footer__social-text {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size:   0.76rem;
   color:       var(--mid-gray);
 }
@@ -118,7 +118,7 @@
 }
 
 .footer__bottom p {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size:   0.75rem;
   color:       rgba(255,255,255,.28);
 }

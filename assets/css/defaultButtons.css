@@ -2,14 +2,13 @@
                             Botões
 ════════════════════════════════════════════════════════════════ */
 
-
 /* Base do botão */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  font-family: 'Sora', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
   font-size: 0.88rem;
   border-radius: 6px;
@@ -31,17 +30,20 @@
 .btn--sm   { padding: 0.46rem 0.95rem; font-size: 0.78rem; }
 .btn--full { width: 100%; }
 
-/* azul sólido */
+/* Botão primário — gradiente animado (shimmer) */
 .btn--primary {
-  background:   var(--blue-mid);
-  color:        var(--white);
-  border-color: var(--blue-mid);
+  background:          linear-gradient(90deg, var(--blue-mid), var(--cyan), var(--blue-mid));
+  background-size:     200% 100%;
+  background-position: 0% 50%;
+  border-color:        transparent;
+  animation:           btn-shimmer 3.5s ease infinite;
 }
+ 
 .btn--primary:hover {
-  background:   var(--blue);
-  border-color: var(--blue);
-  transform:    translateY(-2px);
-  box-shadow:   0 6px 20px rgba(21,88,214,.38);
+  background-position: 100% 50%;
+  border-color:        transparent;
+  box-shadow:          0 6px 28px rgba(0, 198, 255, .40);
+  transform:           translateY(-2px);
 }
 
 /* fantasma */
@@ -87,4 +89,10 @@
   background: var(--off-white);
   transform:  translateY(-2px);
   box-shadow: 0 6px 20px rgba(255,255,255,.25);
+}
+ 
+@keyframes btn-shimmer {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
 }

@@ -10,6 +10,7 @@ import { initStreamTabs    } from './streamTabs.js';
 import { initFaq           } from './faq.js';
 import { initStatsCounter  } from './statsCounter.js';
 import { initWatchbrSelector } from './watchbrSelector.js';
+import { initEnhancements } from './enhancements.js';
 
 /* ── Aguarda o DOM estar pronto ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -41,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
   /* 9. Stats Counter: anima os números do hero */
   initStatsCounter();
 
-  // 10. Pemite trocar a velocidade dos planos 
+  /* 10. Pemite trocar a velocidade dos planos */
   initWatchbrSelector();
+
+  /* 11. Melhorias Gerais */
+  initEnhancements();
+
 });

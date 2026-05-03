@@ -37,9 +37,10 @@
     border-color var(--dur);
 }
 .dif-card:hover {
-  transform:    translateY(-5px);
-  box-shadow:   var(--shadow-md);
   border-color: var(--cyan);
+  box-shadow:
+    var(--shadow-md),
+    0 0 20px rgba(0, 198, 255, .12);
 }
 
 .dif-card__icon {

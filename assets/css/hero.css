@@ -66,7 +66,7 @@
 
 /* Subtítulo */
 .hero__sub {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size:   1.05rem;
   color:       rgba(255,255,255,.72);
   max-width:   44ch;
@@ -95,7 +95,7 @@
 
 .speed-card__label {
   font-size:      0.7rem;
-  font-family:    'Sora', sans-serif;
+  font-family:    'Space Grotesk', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color:          rgba(255,255,255,.5);
@@ -143,6 +143,35 @@
   font-size:   0.80rem;
   color:        var(--transparent-grey);
   margin-bottom: 0.7rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-style: italic;
+}
+
+/* Canvas da animação de fibra óptica */
+#fiber-canvas {
+  position:       absolute;
+  inset:          0;
+  z-index:        2;
+  pointer-events: none;
+  opacity:        0.55;
+}
+ 
+/* Glassmorphism */
+.speed-card {
+  background:               rgba(255, 255, 255, .07);
+  backdrop-filter:          blur(20px);
+  -webkit-backdrop-filter:  blur(20px);
+  border:                   1px solid rgba(255, 255, 255, .18);
+  box-shadow:
+    var(--shadow-glow),
+    0 0 0 1px rgba(0, 198, 255, .15),
+    inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+ 
+/* Stats */
+.stat strong {
+  background:              linear-gradient(135deg, var(--white), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
 }

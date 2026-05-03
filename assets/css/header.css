@@ -68,6 +68,7 @@
   transform:        scaleX(0);
   transform-origin: left;
   transition:       transform 0.28s var(--ease);
+  box-shadow: 0 0 8px rgba(0, 198, 255, .6);
 }
 
 .nav__link:hover,

@@ -3,14 +3,16 @@
 ════════════════════════════════════════════════════════════════ */
 
 .reveal {
-  opacity:    0;
-  transform:  translateY(28px);
+  filter:     blur(2px);
   transition:
-    opacity   0.65s var(--ease),
-    transform 0.65s var(--ease);
+    opacity   0.7s var(--ease),
+    transform 0.7s var(--ease),
+    filter    0.7s var(--ease);
+  transform:  translateY(28px);
 }
 
 .reveal.is-visible {
   opacity:   1;
   transform: translateY(0);
+  filter: blur(0);
 }

@@ -42,7 +42,7 @@
   border:      1.5px solid rgba(255,255,255,.2);
   background:  transparent;
   color:       rgba(255,255,255,.6);
-  font-family: 'Sora', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size:   0.85rem;
   font-weight: 500;
   cursor:      pointer;
@@ -97,8 +97,13 @@
 }
 
 /* Card base */
-.plano-card {
+.plano-card { 
   background:    rgba(255,255,255,.05);
+  border:                   1px solid rgba(255, 255, 255, .10);
+  transition:
+    transform    var(--dur) var(--ease),
+    box-shadow   var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
   border:        1px solid rgba(255,255,255,.1);
   border-radius: 14px;
   padding:       1.6rem 1.4rem;
@@ -106,18 +111,24 @@
   position:      relative;
   display:       flex;
   flex-direction: column;
-  transition:    transform var(--dur) var(--ease), box-shadow var(--dur);
+  backdrop-filter:          blur(12px);
+  -webkit-backdrop-filter:  blur(12px);
 }
 .plano-card:hover {
-  transform:  translateY(-4px);
-  box-shadow: 0 16px 50px rgba(0,0,0,.35);
+  transform:    translateY(-6px);
+  border-color: rgba(0, 198, 255, .45);
+  animation: none;
+  box-shadow:
+    0 16px 50px rgba(0, 0, 0, .40),
+    0 0 0 1px var(--cyan),
+    0 0 45px rgba(0, 198, 255, .30);
 }
 
 /* Card destaque: gradiente azul + borda ciano */
 .plano-card--featured {
   background:  linear-gradient(160deg, var(--blue-mid), var(--blue));
   border-color: var(--cyan);
-  box-shadow:  0 0 0 1px var(--cyan), var(--shadow-glow);
+  animation:    featured-pulse 2.8s ease-in-out infinite;
 }
 
 /* Badge "Mais Popular" */
@@ -128,7 +139,7 @@
   transform:      translateX(-50%);
   background:     var(--cyan);
   color:          var(--navy);
-  font-family:    'Sora', sans-serif;
+  font-family:    'Space Grotesk', sans-serif;
   font-size:      0.67rem;
   font-weight:    700;
   letter-spacing: 0.08em;
@@ -141,7 +152,9 @@
 .plano-card--featured-complete {
   background:  var(--dark-gray);
   border-color: var(--white);
-  box-shadow:  0 0 0 1px var(--white), var(--shadow-glow);
+  background:  linear-gradient(160deg, var(--mid-gray), var(--dark-gray));
+  border-color: var(--white);
+  animation:    featured-pulse-complete 2.8s ease-in-out infinite;
 }
 
 /* Badge "Mais Completo" */
@@ -152,7 +165,7 @@
   transform:      translateX(-50%);
   background:     var(--mid-gray);
   color:          var(--dark-text);
-  font-family:    'Sora', sans-serif;
+  font-family:    'Space Grotesk', sans-serif;
   font-size:      0.67rem;
   font-weight:    700;
   letter-spacing: 0.08em;
@@ -160,6 +173,36 @@
   padding:        0.22rem 0.85rem;
   border-radius:  100px;
   white-space:    nowrap;
+}
+
+@keyframes featured-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px var(--cyan),
+      0 0 20px rgba(0, 198, 255, .18),
+      var(--shadow-glow);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px var(--cyan),
+      0 0 40px rgba(0, 198, 255, .38),
+      0 0 70px rgba(0, 198, 255, .14);
+  }
+}
+
+@keyframes featured-pulse-complete {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px var(--dark-gray),
+      0 0 20px rgba(0, 198, 255, .18),
+      var(--dark-gray);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px var(--dark-gray),
+      0 0 40px rgba(0, 198, 255, .38),
+      0 0 70px rgba(0, 198, 255, .14);
+  }
 }
 
 .plano-card__internet-logo {
@@ -206,7 +249,7 @@
   font-size:     0.72rem;
   color:         rgba(255,255,255,.45);
   margin-bottom: 0.9rem;
-  font-family:   'Barlow', sans-serif;
+  font-family:   'Space Grotesk', sans-serif;
 }
 
 .plano-card__price {
@@ -234,18 +277,18 @@
   gap:         0.45rem;
   font-size:   0.8rem;
   color:       rgba(255,255,255,.75);
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 .plano-card__features li i { color: var(--success); flex-shrink: 0; }
 
 /* ── Nota de vencimento abaixo do preço ── */
 
 .plano-card__note {
-  font-family:   'Barlow', sans-serif;
-  font-size:     0.72rem;
-  color:         rgba(255, 255, 255, .5);
+  font-family:   'Space Grotesk', sans-serif;
+  font-size:     0.85rem;
+  color:         var(--off-white);
   text-align:    center;
-  margin-bottom: 0.9rem;
+  margin-top: 1rem;
   line-height:   1.5;
   font-style: italic;
 }
@@ -256,7 +299,7 @@
 
 /* ── Nome do plano ── */
 .plano-card__plan-name {
-  font-family:    'Sora', sans-serif;
+  font-family:    'Space Grotesk', sans-serif;
   font-size:      0.85rem;
   font-weight:    700;
   color:          var(--white);
@@ -283,7 +326,7 @@
   transform:      translateX(-50%);
   background:     #6c757d;
   color:          var(--white);
-  font-family:    'Sora', sans-serif;
+  font-family:    'Space Grotesk', sans-serif;
   font-size:      0.67rem;
   font-weight:    700;
   letter-spacing: 0.08em;
@@ -304,7 +347,7 @@
 
 /* Botão individual de velocidade */
 .wbr-speed-btn {
-  font-family:   'Sora', sans-serif;
+  font-family:   'Space Grotesk', sans-serif;
   font-size:     0.68rem;
   font-weight:   600;
   padding:       0.28rem 0.6rem;
