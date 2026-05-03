@@ -111,8 +111,6 @@
   position:      relative;
   display:       flex;
   flex-direction: column;
-  backdrop-filter:          blur(12px);
-  -webkit-backdrop-filter:  blur(12px);
 }
 .plano-card:hover {
   transform:    translateY(-6px);
@@ -433,4 +431,20 @@
     font-size: 0.62rem;
     padding:   0.24rem 0.5rem;
   }
+}
+
+/* Camada de brilho interna gerada pelo tilt.js */
+.tilt__shine {
+  position:       absolute;
+  inset:          0;
+  border-radius:  inherit;
+  pointer-events: none;
+  z-index:        0;
+  transition:     background 0.15s ease;
+}
+ 
+/* Garante que o conteúdo do card fique acima do brilho */
+.plano-card > *:not(.tilt__shine) {
+  position: relative;
+  z-index:  1;
 }

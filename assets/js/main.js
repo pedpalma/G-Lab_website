@@ -14,6 +14,7 @@ import { initEnhancements } from './enhancements.js';
 import { initHeroSlider } from './heroSlider.js';
 import { initCursor } from './cursor.js';
 import { initTypewriter } from './typewriter.js';
+import { initTilt } from './tilt.js';
 
 /* ── Aguarda o DOM estar pronto ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,5 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* TypeWriter */
   initTypewriter();
 
+  /* Inclinação do card */
+  initTilt();
 
 });
