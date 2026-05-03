@@ -1,13 +1,32 @@
 /* ════════════════════════════════════════════════════════════════
                             Benefits
+   Substitui COMPLETAMENTE assets/css/benefits.css
 ════════════════════════════════════════════════════════════════ */
 
 .diferenciais {
   padding:    clamp(4rem, 8vw, 7rem) 0;
   background: var(--off-white);
+  position:   relative;
+  overflow:   hidden;
 }
 
-/* Layout 2 colunas: cards | imagem */
+/* Decoração de fundo — círculos sutis */
+.diferenciais::after {
+  content:       '';
+  position:      absolute;
+  top:           -120px;
+  right:         -120px;
+  width:         420px;
+  height:        420px;
+  border-radius: 50%;
+  background:    radial-gradient(circle, rgba(0,198,255,.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index:       0;
+}
+
+.diferenciais .container { position: relative; z-index: 1; }
+
+/* Layout 2 colunas: grid de cards | imagem */
 .diferenciais__layout {
   display:               grid;
   grid-template-columns: 1fr 320px;
@@ -19,52 +38,114 @@
 .diferenciais__grid {
   display:               grid;
   grid-template-columns: 1fr 1fr;
-  gap:                   1.1rem;
+  gap:                   1rem;
 }
 
-/* Card de diferencial */
+/* ── Card redesenhado ── */
 .dif-card {
-  display:     flex;
-  gap:         1rem;
-  align-items: flex-start;
-  background:  var(--white);
-  border-radius: 12px;
-  padding:     1.3rem 1.1rem;
-  border:      1px solid var(--light-gray);
+  display:        flex;
+  flex-direction: column;
+  gap:            0.6rem;
+  background:     var(--white);
+  border-radius:  16px;
+  padding:        1.4rem 1.2rem;
+  border:         1px solid var(--light-gray);
+  position:       relative;
+  overflow:       hidden;
   transition:
     transform    var(--dur) var(--ease),
     box-shadow   var(--dur) var(--ease),
-    border-color var(--dur);
-}
-.dif-card:hover {
-  border-color: var(--cyan);
-  box-shadow:
-    var(--shadow-md),
-    0 0 20px rgba(0, 198, 255, .12);
+    border-color var(--dur) var(--ease);
 }
 
+/* Linha decorativa no topo do card */
+.dif-card::before {
+  content:       '';
+  position:      absolute;
+  top:           0;
+  left:          0;
+  right:         0;
+  height:        3px;
+  background:    linear-gradient(90deg, var(--blue-mid), var(--cyan));
+  transform:     scaleX(0);
+  transform-origin: left;
+  transition:    transform 0.35s var(--ease);
+  border-radius: 16px 16px 0 0;
+}
+
+.dif-card:hover {
+  transform:    translateY(-6px);
+  box-shadow:
+    0 12px 40px rgba(4, 18, 43, .10),
+    0 0 0 1px rgba(0, 198, 255, .2);
+  border-color: rgba(0, 198, 255, .3);
+}
+
+.dif-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Ícone */
 .dif-card__icon {
-  flex-shrink:     0;
-  width:           42px;
-  height:          42px;
-  border-radius:   10px;
+  width:           44px;
+  height:          44px;
+  background-color: var(--off-white);
+  border-radius:   12px;
   display:         flex;
   align-items:     center;
   justify-content: center;
   font-size:       1.3rem;
   color:           var(--cyan);
+  flex-shrink:     0;
+  box-shadow:      0 4px 12px rgba(4, 18, 43, .18);
+  transition:      transform var(--dur) var(--ease), box-shadow var(--dur);
 }
 
-.dif-card__text h3 { font-size: 0.94rem; color: var(--navy); margin-bottom: 0.28rem; }
-.dif-card__text p  { font-size: 0.82rem; color: #5a6a8a; line-height: 1.65; }
+.dif-card:hover .dif-card__icon {
+  transform:  scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 198, 255, .3);
+}
 
-/* Coluna de imagem */
-.diferenciais__visual { position: relative; }
+/* Texto */
+.dif-card__text h3 {
+  font-size:     0.94rem;
+  color:         var(--navy);
+  margin-bottom: 0.22rem;
+}
+
+.dif-card__text p {
+  font-size:   0.81rem;
+  color:       #5a6a8a;
+  line-height: 1.65;
+}
+
+/* ── Coluna de imagem ── */
+.diferenciais__visual {
+  position: relative;
+}
 
 .diferenciais__img-wrap {
-  border-radius: 10px;
+  border-radius: 20px;
   overflow:      hidden;
   box-shadow:    var(--shadow-lg);
+  position:      relative;
+}
+
+/* Borda gradiente na imagem */
+.diferenciais__img-wrap::before {
+  content:       '';
+  position:      absolute;
+  inset:         0;
+  border-radius: 20px;
+  padding:       2px;
+  background-color: var(--off-white);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index:        2;
 }
 
 .diferenciais__img {
@@ -73,4 +154,50 @@
   object-fit:      cover;
   object-position: center;
   display:         block;
+  transition:      transform 0.6s var(--ease);
+}
+
+.diferenciais__img-wrap:hover .diferenciais__img {
+  transform: scale(1.04);
+}
+
+/* Badge flutuante */
+.diferenciais__badge {
+  position:        absolute;
+  bottom:          1.2rem;
+  left:            1.2rem;
+  background:      rgba(4, 18, 43, .88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border:          1px solid rgba(0, 198, 255, .4);
+  color:           var(--cyan);
+  font-family:     'Space Grotesk', 'Sora', sans-serif;
+  font-size:       0.76rem;
+  font-weight:     600;
+  padding:         0.45rem 0.9rem;
+  border-radius:   100px;
+  display:         flex;
+  align-items:     center;
+  gap:             0.4rem;
+  z-index:         3;
+  box-shadow:      0 4px 16px rgba(0, 198, 255, .2);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 1024px) {
+  .diferenciais__layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .diferenciais__visual {
+    order:     -1;
+    max-width: 480px;
+    margin:    0 auto;
+  }
+  .diferenciais__img { height: 300px; }
+  .diferenciais__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .diferenciais__grid { grid-template-columns: 1fr; }
 }
