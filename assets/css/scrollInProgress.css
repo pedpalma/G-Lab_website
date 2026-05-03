@@ -1,0 +1,17 @@
+
+/* ════════════════════════════════════════════════════════════════
+                    SCROLL PROGRESS BAR
+════════════════════════════════════════════════════════════════ */
+ 
+#scroll-progress {
+  position:   fixed;
+  top:        0;
+  left:       0;
+  height:     3px;
+  width:      0%;
+  background: linear-gradient(90deg, var(--blue-mid), var(--cyan));
+  box-shadow: 0 0 10px rgba(0, 198, 255, .7);
+  z-index:    9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}

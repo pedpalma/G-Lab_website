@@ -15,6 +15,7 @@ import { initHeroSlider } from './heroSlider.js';
 import { initCursor } from './cursor.js';
 import { initTypewriter } from './typewriter.js';
 import { initTilt } from './tilt.js';
+import { initScrollProgress } from './scrollProgress.js';
 
 /* ── Aguarda o DOM estar pronto ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -63,5 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Inclinação do card */
   initTilt();
+
+  /* ProgressBar */
+  initScrollProgress();
 
 });
