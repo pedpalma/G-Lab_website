@@ -14,7 +14,7 @@
 /* Bolha base */
 .bubble {
   position: absolute;
-  bottom: -140px;
+  bottom: 0px;
   border-radius: 14px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.06);
