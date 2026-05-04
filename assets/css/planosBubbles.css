@@ -1,57 +1,31 @@
 /* ════════════════════════════════════════════════════════════════
-                    BOLHAS — seção .planos
-   Adicione este bloco ao final de assets/css/plans.css
-   (ou salve como assets/css/planosBubbles.css e importe no head)
+                              BOLHAS
 ════════════════════════════════════════════════════════════════ */
 
-/* Camada que contém todas as bolhas — fica entre o .planos__bg e o conteúdo */
+/* Camada que contém todas as bolhas */
 .planos__bubbles {
   position: absolute;
   inset: 0;
-  z-index: 0; /* acima do gradiente (z-index 0) mas abaixo do .container (z-index 1) */
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
 
-/* ── Bolha base ── */
+/* Bolha base */
 .bubble {
   position: absolute;
-  bottom: -140px; /* começa abaixo do fold */
+  bottom: -140px;
   border-radius: 14px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.06); /* fallback se a imagem não carregar */
-  will-change: transform, opacity;
+  background: rgba(255, 255, 255, 0.06);
 }
 
-/* Placeholder cinza enquanto não há imagem */
 .bubble img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
   border-radius: inherit;
 }
-
-.bubble--placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bubble--placeholder::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 198, 255, 0.08),
-    rgba(16, 69, 168, 0.15)
-  );
-  border-radius: inherit;
-  border: 1px solid rgba(0, 198, 255, 0.12);
-}
-
 /* ══════════════════════════════════════════════════════
    Tamanhos: 3 classes para variar a escala visualmente
 ══════════════════════════════════════════════════════ */
@@ -64,8 +38,8 @@
   height: 96px;
 }
 .bubble--lg {
-  width: 118px;
-  height: 118px;
+  width: 125px;
+  height: 125px;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -76,7 +50,7 @@
    o zigue-zague X é embutido em cada keyframe.
 ══════════════════════════════════════════════════════ */
 
-/* Bolha 1 — oscila para a direita depois esquerda */
+/* Bolha 1: oscila para a direita depois esquerda */
 @keyframes rise-1 {
   0% {
     transform: translateX(0px) translateY(0);
@@ -109,7 +83,7 @@
   }
 }
 
-/* Bolha 2 — vai logo para a esquerda */
+/* Bolha 2: vai logo para a esquerda */
 @keyframes rise-2 {
   0% {
     transform: translateX(0px) translateY(0);
@@ -142,7 +116,7 @@
   }
 }
 
-/* Bolha 3 — zigue-zague mais curto e suave */
+/* Bolha 3: zigue-zague mais curto e suave */
 @keyframes rise-3 {
   0% {
     transform: translateX(0px) translateY(0);
@@ -175,7 +149,7 @@
   }
 }
 
-/* Bolha 4 — amplitude maior, mais dramático */
+/* Bolha 4: amplitude maior */
 @keyframes rise-4 {
   0% {
     transform: translateX(0px) translateY(0);
@@ -208,7 +182,7 @@
   }
 }
 
-/* Bolha 5 — deriva constante para um lado */
+/* Bolha 5: deriva constante para um lado */
 @keyframes rise-5 {
   0% {
     transform: translateX(0px) translateY(0);
@@ -241,7 +215,7 @@
   }
 }
 
-/* Bolha 6 — ritmo mais lento, zigue largo */
+/* Bolha 6: ritmo mais lento, zigue largo */
 @keyframes rise-6 {
   0% {
     transform: translateX(0px) translateY(0);
@@ -274,7 +248,7 @@
   }
 }
 
-/* Bolha 7 — micro-zigue quase reto */
+/* Bolha 7: micro-zigue quase reto */
 @keyframes rise-7 {
   0% {
     transform: translateX(0px) translateY(0);
@@ -307,7 +281,7 @@
   }
 }
 
-/* Bolha 8 — deriva para esquerda, ritmo lento */
+/* Bolha 8: deriva para esquerda, ritmo lento */
 @keyframes rise-8 {
   0% {
     transform: translateX(0px) translateY(0);
@@ -353,7 +327,7 @@
 .bubble:nth-child(2) {
   left: 17%;
   animation: rise-2 22s ease-in-out infinite;
-  animation-delay: -7s; /* delay negativo = já está no meio do percurso ao carregar */
+  animation-delay: -7s;
 }
 .bubble:nth-child(3) {
   left: 31%;

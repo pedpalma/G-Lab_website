@@ -1,7 +1,6 @@
 // Lista de imagens do slider.
 
 const SLIDES = [
-  "./assets/images/background-portrait.jpg",
   "./assets/images/max-500mb.png",
   "./assets/images/max-650mb.png",
   "./assets/images/max-800mb.png",
