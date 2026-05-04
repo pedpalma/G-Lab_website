@@ -19,7 +19,7 @@
 
 ## Visão Geral
 
-O site da **G-Lab Telecom** é uma Single Page Application desenvolvida sem frameworks ou etapas de build. Todo o código roda diretamente no navegador via módulos ES nativos, com deploy automático na Vercel a cada push no repositório.
+O site da **G-Lab Telecom** é uma Landing Page Application desenvolvida sem frameworks ou etapas de build. Todo o código roda diretamente no navegador via módulos ES nativos, com deploy automático na Vercel a cada push no repositório.
 
 O objetivo central é apresentar os planos de internet fibra óptica, converter visitantes em leads via WhatsApp e oferecer canais de atendimento acessíveis.
 
