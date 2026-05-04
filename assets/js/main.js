@@ -11,7 +11,6 @@ import { initFaq } from "./faq.js";
 import { initWatchbrSelector } from "./watchbrSelector.js";
 import { initEnhancements } from "./enhancements.js";
 import { initHeroSlider } from "./heroSlider.js";
-import { initCursor } from "./cursor.js";
 import { initTypewriter } from "./typewriter.js";
 import { initTilt } from "./tilt.js";
 import { initScrollProgress } from "./scrollProgress.js";
@@ -50,9 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* 11. Slider */
   initHeroSlider();
-
-  /* 12. Cursor */
-  initCursor();
 
   /* 13. TypeWriter */
   initTypewriter();

@@ -16,7 +16,6 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("../images/background-portrait.jpg");
   background-size: cover;
   background-position: center top;
 }
@@ -46,24 +45,29 @@
   pointer-events: none;
 }
 
-/* Layout principal */
 .hero__content {
   position: relative;
   z-index: 3;
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(auto, 550px) 1fr;
   align-items: center;
   gap: 3rem;
   padding-top: clamp(2rem, 8vw, 7rem);
   padding-bottom: clamp(1.5rem, 5vw, 4rem);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(1.5rem, 5%, 4rem);
+  padding-right: 1.5rem;
 }
 
-/* Título do hero */
 .hero__title {
   color: var(--white);
   margin-bottom: 1.2rem;
+  max-width: 550px;
 }
+
 .hero__title--accent {
   color: var(--cyan);
 }
@@ -82,94 +86,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
-}
-
-/* Wrapper do speed-card */
-.hero__card-wrap {
-  flex-shrink: 0;
-}
-
-/* Speed Card */
-.speed-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-radius: 16px;
-  padding: 1.8rem 1rem;
-  width: 310px;
-  text-align: center;
-  box-shadow: var(--shadow-glow);
-}
-
-.speed-card__label {
-  font-size: 0.7rem;
-  font-family: "Space Grotesk", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 0.4rem;
-}
-
-.speed-card__speed {
-  font-size: 3.4rem;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 0.3rem;
-}
-.speed-card__speed span {
-  font-size: 1.1rem;
-  color: var(--cyan);
-  font-weight: 400;
-}
-
-.speed-card__price {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--cyan);
-  line-height: 1;
-  margin-bottom: 1.4rem;
-}
-.speed-card__price small {
-  font-size: 0.95rem;
-  vertical-align: super;
-}
-.speed-card__price sup {
-  font-size: 0.95rem;
-}
-.speed-card__price span {
-  font-size: 0.82rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.speed-card__features {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.4rem;
-  margin-left: 4rem;
-}
-.speed-card__features li {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.83rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-.speed-card__features li i {
-  color: var(--success);
-  flex-shrink: 0;
-}
-
-.speed-card__note {
-  font-size: 0.8rem;
-  color: var(--transparent-grey);
-  margin-bottom: 0.7rem;
-  font-family: "Space Grotesk", sans-serif;
-  font-style: italic;
 }
 
 /* Canvas da animação de fibra óptica */
