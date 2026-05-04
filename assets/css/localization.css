@@ -139,7 +139,7 @@
 /* ── Foto da fachada ── */
 .loc-card__photo {
   position: relative;
-  height: 220px;
+  height: 300px;
   overflow: hidden;
   background: var(--navy-light);
   flex-shrink: 0;
