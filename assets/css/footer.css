@@ -55,7 +55,7 @@
 /* Grid principal */
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1.4fr 1fr;
+  grid-template-columns: 1.8fr 1fr 1fr 1.8fr;
   gap: 3rem;
   padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
@@ -98,7 +98,7 @@
 
 /* ── Colunas de nav ── */
 .footer__col h4 {
-  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-family: "Space Grotesk";
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -209,6 +209,7 @@
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer__legal-label {
@@ -217,16 +218,8 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--cyan);
   flex-shrink: 0;
-}
-
-/* Placeholders de documentos legais */
-.footer__legal-docs {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  flex: 1;
 }
 
 .footer__legal-doc {
@@ -245,7 +238,6 @@
     color var(--dur);
 }
 
-/* Quando o arquivo for adicionado, troque o <span> por <a href="..."> */
 .footer__legal-doc i {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.2);

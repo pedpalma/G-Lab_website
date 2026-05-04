@@ -1,6 +1,12 @@
 // Lista de imagens do slider.
 
-const SLIDES = ["./assets/images/background-portrait.jpg"];
+const SLIDES = [
+  "./assets/images/background-portrait.jpg",
+  "./assets/images/max-500mb.png",
+  "./assets/images/max-650mb.png",
+  "./assets/images/max-800mb.png",
+  "./assets/images/vantage-club.png",
+];
 
 /** Intervalo entre as trocas em milissegundos */
 const INTERVAL = 5000;
