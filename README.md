@@ -1,11 +1,11 @@
-# G-Lab Telecom — Landing Page
+# G-Lab Telecom
 
 <p align="center">
   <img src="./assets/icons/logo-white-big.png" alt="G-Lab Telecom" width="180" />
 </p>
 
 <p align="center">
-  Landing page comercial para provedor de internet fibra óptica — construída com HTML5, CSS3 modular e JavaScript ES Modules puros, sem frameworks ou bundlers.
+  Landing page comercial para provedor de internet fibra óptica, construída com HTML5, CSS3 modular e JavaScript ES Modules puros, sem frameworks ou bundlers.
 </p>
 
 <p align="center">
@@ -26,8 +26,8 @@ O objetivo central é apresentar os planos de internet fibra óptica, converter 
 | | |
 |---|---|
 | **Tipo** | Single Page Application (vanilla) |
-| **Bundler** | Nenhum — módulos resolvidos nativamente pelo browser |
-| **Hospedagem** | Vercel — CI/CD automático |
+| **Bundler** | Nenhum |
+| **Hospedagem** | Vercel |
 | **Requisitos** | Navegador moderno com suporte a ES Modules, CSS Custom Properties e IntersectionObserver API |
 
 ---
@@ -42,18 +42,18 @@ O objetivo central é apresentar os planos de internet fibra óptica, converter 
 
 ## Funcionalidades
 
-- **Typewriter** no título do hero — alterna palavras em loop com efeito de digitação
-- **Hero Slider** — troca automática de imagens com dots de navegação e pausa inteligente ao perder foco
-- **Canvas de fibra óptica** — animação de linhas em canvas 2D, pausada via `IntersectionObserver` quando fora do viewport
-- **Seletor de velocidade WatchBR** — cada card de plano atualiza preço, upload e link do WhatsApp de forma independente
-- **Abas de planos** com sub-abas de streaming (Max / WatchBR)
-- **FAQ Accordion** — acessível, com `aria-expanded` e `hidden`
-- **Scroll Reveal** — fade-in com `IntersectionObserver`, executado uma única vez por elemento
-- **Cursor personalizado** com lerp suave via `requestAnimationFrame` (apenas em `pointer: fine`)
-- **Efeito tilt 3D** nos cards de plano com brilho interno dinâmico
-- **Botões magnéticos** no hero, banner CTA e speed card
-- **Scroll Progress Bar** e **Scroll Spy** no menu de navegação
-- **Menu mobile** com animação em X, bloqueio de scroll e fechamento por Escape
+- **Typewriter** Alterna palavras em loop com efeito de digitação no título do hero.
+- **Hero Slider** Troca automática de imagens com dots de navegação e pausa inteligente ao perder foco.
+- **Canvas de fibra óptica** Animação de linhas em canvas 2D, pausada via `IntersectionObserver` quando fora do viewport.
+- **Seletor de velocidade WatchBR** cada card de plano atualiza preço, upload e link do WhatsApp de forma independente.
+- **Abas de planos** com sub-abas de streaming (Max / WatchBR).
+- **FAQ Accordion** Acessível, com `aria-expanded` e `hidden`.
+- **Scroll Reveal** Fade-in com `IntersectionObserver`, executado uma única vez por elemento.
+- **Cursor personalizado** nom lerp suave via `requestAnimationFrame` (apenas em `pointer: fine`).
+- **Efeito tilt 3D** nos cards de plano com brilho interno dinâmico.
+- **Botões magnéticos** no hero, banner CTA e speed card.
+- **Scroll Progress Bar** e **Scroll Spy** no menu de navegação.
+- **Menu mobile** com animação em X, bloqueio de scroll e fechamento por Escape.
 
 ---
 
@@ -65,7 +65,7 @@ O objetivo central é apresentar os planos de internet fibra óptica, converter 
 └── assets/
     ├── css/                      # 18 módulos de estilo
     │   ├── defaultStyles.css     # Reset, variáveis CSS, tipografia, container
-    │   ├── defaultButtons.css    # Sistema de botões (variantes e tamanhos)
+    │   ├── defaultButtons.css    # Sistema de botões
     │   ├── topBar.css
     │   ├── header.css
     │   ├── mobileMenu.css
@@ -82,9 +82,9 @@ O objetivo central é apresentar os planos de internet fibra óptica, converter 
     │   ├── reveal.css
     │   ├── cursor.css
     │   ├── scrollInProgress.css
-    │   └── responsive.css        # Todos os media queries — carregado por último
+    │   └── responsive.css        # Todos os media queries carregado por último
     ├── js/                       # 16 módulos JavaScript
-    │   ├── main.js               # Entry point — importa e inicializa tudo
+    │   ├── main.js               # Entry point, importa e inicializa tudo
     │   ├── headerScroll.js
     │   ├── mobileMenu.js
     │   ├── scrollSpy.js
@@ -114,8 +114,8 @@ Todas as variáveis globais estão em `assets/css/defaultStyles.css`. Alterar qu
 /* Cores principais */
 --navy:      #04122b   /* Topbar, footer */
 --navy-mid:  #0a1f4a   /* Hero, seção de planos */
---blue-mid:  #1558d6   /* Ação principal — botões, links ativos */
---cyan:      #00c6ff   /* Accent — destaques, ícones, bordas hover */
+--blue-mid:  #1558d6   /* Ação principal: botões, links ativos */
+--cyan:      #00c6ff   /* Accent: destaques, ícones, bordas hover */
 
 /* Animação */
 --ease: cubic-bezier(0.22, 1, 0.36, 1)
@@ -162,7 +162,7 @@ Todos os demais módulos são independentes entre si.
 | Cores globais | `assets/css/defaultStyles.css` → `:root` |
 | Planos de internet | `index.html` → `#tab-internet > .planos__grid` |
 
-> **Após qualquer alteração**, use `Ctrl+Shift+R` (ou `Cmd+Shift+R` no Mac) para forçar o navegador a recarregar sem cache.
+> **Após qualquer alteração**, use `Ctrl+Shift+R` para forçar o navegador a recarregar sem cache.
 
 ---
 
@@ -223,7 +223,7 @@ Abordagem **desktop-first**. Todos os media queries ficam centralizados em `resp
 
 ## Deploy
 
-O projeto está hospedado na **Vercel**. Qualquer push na branch principal dispara um novo deploy automaticamente — sem etapas de build, sem configuração adicional.
+O projeto está hospedado na **Vercel**. Qualquer push na branch principal dispara um novo deploy automaticamente, sem etapas de build, sem configuração adicional.
 
 ---
 
