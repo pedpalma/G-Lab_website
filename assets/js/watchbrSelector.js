@@ -194,7 +194,7 @@ function updateCard(card, speed) {
   const ctaEl = card.querySelector(".wbr-dynamic-cta");
   if (ctaEl) {
     const planName = WBR_PLAN_NAMES[planId] || planId;
-    ctaEl.href = `${WA_BASE}Gostaria%20de%20contratar%20o%20plano%20WatchBR%20${planName}%20de%20${speed}%20Mbps%20por%20R%24${plan.priceInt}%2C${plan.priceDec}%2Fm%C3%AAs!`;
+    ctaEl.href = `${WA_BASE}Gostaria%20de%20obter%20mais%20informações%20sobre%20o%20plano%20WatchBR%20${planName}%20de%20${speed}Mbps!`;
   }
 }
 
