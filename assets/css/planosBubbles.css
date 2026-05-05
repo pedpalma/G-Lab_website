@@ -25,6 +25,7 @@
   height: 100%;
   display: block;
   border-radius: inherit;
+  object-fit: cover;
 }
 /* ══════════════════════════════════════════════════════
    Tamanhos: 3 classes para variar a escala visualmente
@@ -38,8 +39,8 @@
   height: 96px;
 }
 .bubble--lg {
-  width: 125px;
-  height: 125px;
+  width: 170px;
+  height: 95px;
 }
 
 /* ══════════════════════════════════════════════════════

@@ -57,7 +57,7 @@
   padding-bottom: clamp(1.5rem, 5vw, 4rem);
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
   padding-left: clamp(1.5rem, 5%, 4rem);
   padding-right: 1.5rem;
 }

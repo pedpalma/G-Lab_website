@@ -65,7 +65,11 @@
   }
 
   /* Hero: empilha texto acima do speed-card */
+  .hero {
+    min-height: 500px;
+  }
   .hero__content {
+    align-items: start;
     grid-template-columns: 1fr;
     gap: 2rem;
     padding-top: clamp(3rem, 6vw, 5rem);
