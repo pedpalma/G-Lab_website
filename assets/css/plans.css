@@ -85,8 +85,8 @@
   transition: all var(--dur);
 }
 .stream-tab img {
-  height: 26px;
-  width: 80px;
+  height: 35px;
+  width: 70px;
   filter: brightness(0.7);
   transition: filter var(--dur);
 }
@@ -243,8 +243,8 @@
   font-size: 1.1rem;
 }
 .plano-card__stream-logo img {
-  height: 20px;
-  width: auto;
+  height: 40px;
+  width: 70px;
   display: inline;
   filter: brightness(1.2);
 }
