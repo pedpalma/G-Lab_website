@@ -23,7 +23,6 @@ O site da **G-Lab Telecom** é uma Landing Page Application desenvolvida sem fra
 
 O objetivo central é apresentar os planos de internet fibra óptica, converter visitantes em leads via WhatsApp e oferecer canais de atendimento acessíveis.
 
-| -------------- | -------------------------------------------------------------------------------------------- |
 | **Tipo** | Single Page Application (vanilla) |
 | **Bundler** | Nenhum |
 | **Hospedagem** | Vercel |
