@@ -23,20 +23,21 @@ O site da **G-Lab Telecom** é uma Landing Page Application desenvolvida sem fra
 
 O objetivo central é apresentar os planos de internet fibra óptica, converter visitantes em leads via WhatsApp e oferecer canais de atendimento acessíveis.
 
-| | |
-|---|---|
-| **Tipo** | Single Page Application (vanilla) |
-| **Bundler** | Nenhum |
-| **Hospedagem** | Vercel |
+|                |                                                                                              |
+| -------------- | -------------------------------------------------------------------------------------------- |
+| **Tipo**       | Single Page Application (vanilla)                                                            |
+| **Bundler**    | Nenhum                                                                                       |
+| **Hospedagem** | Vercel                                                                                       |
 | **Requisitos** | Navegador moderno com suporte a ES Modules, CSS Custom Properties e IntersectionObserver API |
 
 ---
 
 ## Demonstração
 
-| Desktop | Mobile |
-|---|---|
-| ![Desktop View](./assets/images/new.png) | ![Mobile View](./assets/images/new_mobile.png) |
+| Desktop                                            | Mobile                                           |
+| -------------------------------------------------- | ------------------------------------------------ |
+| ![Desktop View](./assets/images/desktop-view.png)  | ![Mobile View](./assets/images/mobile-view.png)  |
+| ![Desktop View](./assets/images/plans-desktop.png) | ![Mobile View](./assets/images/plans-mobile.png) |
 
 ---
 
@@ -112,14 +113,11 @@ Todas as variáveis globais estão em `assets/css/defaultStyles.css`. Alterar qu
 
 ```css
 /* Cores principais */
---navy:      #04122b   /* Topbar, footer */
---navy-mid:  #0a1f4a   /* Hero, seção de planos */
---blue-mid:  #1558d6   /* Ação principal: botões, links ativos */
---cyan:      #00c6ff   /* Accent: destaques, ícones, bordas hover */
-
-/* Animação */
---ease: cubic-bezier(0.22, 1, 0.36, 1)
---dur:  0.25s
+--navy: #04122b /* Topbar, footer */ --navy-mid: #0a1f4a
+  /* Hero, seção de planos */ --blue-mid: #1558d6
+  /* Ação principal: botões, links ativos */ --cyan: #00c6ff
+  /* Accent: destaques, ícones, bordas hover */ /* Animação */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1) --dur: 0.25s;
 ```
 
 **Tipografia:** Space Grotesk (UI e títulos) · Sora (fallback) · Barlow (corpo em contextos específicos)
@@ -130,9 +128,9 @@ Todas as variáveis globais estão em `assets/css/defaultStyles.css`. Alterar qu
 
 Nenhuma dependência é gerenciada via `npm`. Tudo é carregado por CDN.
 
-| Recurso | URL |
-|---|---|
-| Google Fonts | `fonts.googleapis.com` |
+| Recurso               | URL                                   |
+| --------------------- | ------------------------------------- |
+| Google Fonts          | `fonts.googleapis.com`                |
 | Phosphor Icons v2.1.1 | `unpkg.com/@phosphor-icons/web@2.1.1` |
 
 ---
@@ -152,15 +150,15 @@ Todos os demais módulos são independentes entre si.
 
 ## Manutenção de Conteúdo
 
-| O que alterar | Onde |
-|---|---|
-| Número de WhatsApp | `Ctrl+H` → buscar `5511948830455` |
-| Telefone de contato | `Ctrl+H` → buscar `2500-3241` |
-| Palavras do typewriter | `assets/js/typewriter.js` → `WORDS[]` |
-| Preços dos planos WatchBR | `assets/js/watchbrSelector.js` → `WBR_PLANS` |
-| Imagens do slider do hero | `assets/js/heroSlider.js` → `SLIDES[]` |
-| Cores globais | `assets/css/defaultStyles.css` → `:root` |
-| Planos de internet | `index.html` → `#tab-internet > .planos__grid` |
+| O que alterar             | Onde                                           |
+| ------------------------- | ---------------------------------------------- |
+| Número de WhatsApp        | `Ctrl+H` → buscar `5511948830455`              |
+| Telefone de contato       | `Ctrl+H` → buscar `2500-3241`                  |
+| Palavras do typewriter    | `assets/js/typewriter.js` → `WORDS[]`          |
+| Preços dos planos WatchBR | `assets/js/watchbrSelector.js` → `WBR_PLANS`   |
+| Imagens do slider do hero | `assets/js/heroSlider.js` → `SLIDES[]`         |
+| Cores globais             | `assets/css/defaultStyles.css` → `:root`       |
+| Planos de internet        | `index.html` → `#tab-internet > .planos__grid` |
 
 > **Após qualquer alteração**, use `Ctrl+Shift+R` para forçar o navegador a recarregar sem cache.
 
@@ -172,6 +170,7 @@ Todos os demais módulos são independentes entre si.
 Duplique qualquer `.plano-card` dentro de `#tab-internet > .planos__grid` e atualize velocidade, preço e o link do WhatsApp. O grid se ajusta automaticamente via `auto-fit`.
 
 **Novo plano WatchBR**
+
 1. Adicione uma chave em `WBR_PLANS` no `watchbrSelector.js`
 2. Adicione o nome URL-encoded em `WBR_PLAN_NAMES`
 3. Duplique um `.wbr-card` em `#grid-watchbr` com os atributos `data-plan` e `data-default-speed` corretos
@@ -180,6 +179,7 @@ Duplique qualquer `.plano-card` dentro de `#tab-internet > .planos__grid` e atua
 Duplique qualquer `.faq__item` dentro de `.faq__list`. O `faq.js` gerencia automaticamente todos os itens presentes no DOM.
 
 **Novo módulo JS**
+
 1. Crie `assets/js/nome-do-modulo.js` exportando `initNome()`
 2. Importe e chame `initNome()` em `main.js` dentro do `DOMContentLoaded`
 
@@ -189,18 +189,19 @@ Duplique qualquer `.faq__item` dentro de `.faq__list`. O `faq.js` gerencia autom
 
 Abordagem **desktop-first**. Todos os media queries ficam centralizados em `responsive.css`, que deve ser sempre o **último** arquivo carregado.
 
-| Breakpoint | Principais ajustes |
-|---|---|
-| `≤ 1024px` | Layout de benefícios em 1 coluna, footer em 2 colunas |
-| `≤ 900px` | Nav oculta, hamburguer visível, grid de planos em coluna única |
-| `≤ 768px` | Hero empilhado, stats em grade 2×2 |
-| `≤ 480px` | E-mail da topbar oculto, streaming tabs em coluna |
+| Breakpoint | Principais ajustes                                             |
+| ---------- | -------------------------------------------------------------- |
+| `≤ 1024px` | Layout de benefícios em 1 coluna, footer em 2 colunas          |
+| `≤ 900px`  | Nav oculta, hamburguer visível, grid de planos em coluna única |
+| `≤ 768px`  | Hero empilhado, stats em grade 2×2                             |
+| `≤ 480px`  | E-mail da topbar oculto, streaming tabs em coluna              |
 
 ---
 
 ## Performance e Acessibilidade
 
 **Performance**
+
 - `loading="lazy"` em todas as imagens abaixo do fold
 - `rel="preconnect"` nas fontes do Google
 - Script do Phosphor Icons com `defer`
@@ -210,6 +211,7 @@ Abordagem **desktop-first**. Todos os media queries ficam centralizados em `resp
 - `unobserve()` após cada animação de reveal (executa uma única vez)
 
 **Acessibilidade**
+
 - `aria-label` em todos os botões sem texto visível
 - `aria-expanded` nos botões do FAQ e hamburguer
 - `aria-hidden` no menu mobile quando fechado
